@@ -1,0 +1,23 @@
+# Node modules
+WEB/node_modules/
+WEB/.env
+WEB/dist/
+
+# Test artifacts
+WEB/tests_report.csv
+
+# macOS system files
+.DS_Store
+**/.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+
+# Build outputs
+build/
+dist/
+
+# Editor
+.vscode/
+.idea/

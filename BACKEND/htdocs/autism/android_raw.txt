@@ -1,0 +1,14 @@
+HEADERS:
+Array
+(
+    [Content-Type] => application/x-www-form-urlencoded; charset=UTF-8
+    [User-Agent] => Dalvik/2.1.0 (Linux; U; Android 14; I2127 Build/UP1A.231005.007)
+    [Host] => 172.23.19.239
+    [Connection] => Keep-Alive
+    [Accept-Encoding] => gzip
+    [Content-Length] => 66
+)
+
+BODY:
+doctor_id=CURRENT_DOCTOR_ID&advice_text=take+care&patient_id=i123&
+

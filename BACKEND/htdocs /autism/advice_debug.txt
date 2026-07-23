@@ -1,0 +1,103 @@
+{
+ "patient_id": "i123",
+  "advice_text": "consult pediatric neurologist",
+  "doctor_name": "Sandhya"
+}
+
+{
+ "patient_id": "i123",
+  "advice_text": "consult pediatric neurologist",
+  "doctor_name": "Sandhya"
+}
+
+{
+ "patient_id": "i123",
+  "advice_text": "consult pediatric neurologist",
+  "doctor_name": "Sandhya"
+}
+
+{
+ "patient_id": "i123",
+  "advice_text": "consult pediatric neurologist",
+  "doctor_name": "Sandhya"
+}
+
+{
+ "patient_id": "i123",
+  "advice_text": "consult pediatric neurologist",
+  "doctor_name": "Sandhya"
+}
+
+
+{
+  "patient_id": "1123",
+  "advice_text": "consult pediatric neurologist",
+  "doctor_name": "Sandhya"
+}
+
+{
+  "patient_id": "1123",
+  "advice_text": "consult pediatric neurologist",
+  "doctor_name": "Sandhya"
+}
+
+{
+ "patient_id": "i123",
+  "advice_text": "consult pediatric neurologist",
+  "doctor_name": "Sandhya"
+}
+
+doctor_id=CURRENT_DOCTOR_ID&advice_text=take+care&patient_id=i123&
+doctor_id=CURRENT_DOCTOR_ID&advice_text=take+care&patient_id=i123&
+doctor_id=CURRENT_DOCTOR_ID&advice_text=take+care&patient_id=i123&
+doctor_id=CURRENT_DOCTOR_ID&advice_text=take+care&patient_id=i123&
+doctor_id=CURRENT_DOCTOR_ID&advice_text=take+care&patient_id=P889&
+doctor_id=CURRENT_DOCTOR_ID&advice_text=hui&patient_id=p907&
+{
+ "patient_id": "h567",
+  "advice_text": "consult pediatric neurologist",
+  "doctor_name": "Sandhya"
+}
+
+{
+ "patient_id": "i123",
+  "advice_text": "consult pediatric neurologist",
+  "doctor_name": "Sandhya"
+}
+
+{
+ "patient_id": "i123",
+  "advice_text": "consult pediatric neurologist",
+  "doctor_name": "Sandhya"
+}
+
+{
+ "patient_id": "h567",
+  "advice_text": "consult pediatric neurologist",
+  "doctor_name": "Sandhya"
+}
+
+doctor_id=CURRENT_DOCTOR_ID&advice_text=take+care&patient_id=h567&
+{"patient_id":"h567","doctor_name":"Dr Dashboard","advice_text":"take care"}
+{"patient_id":"i123","doctor_name":"Unknown Doctor","advice_text":"take care"}
+{"patient_id":"h567","doctor_name":"Tejasri","advice_text":"take medication"}
+{"patient_id":"y567","doctor_name":"Dr. Tejasri","advice_text":"consult a doctor"}
+{"patient_id":"p907","doctor_name":"Dr. Tejasri","advice_text":"take care"}
+{
+  "patient_id": "p907",
+  "advice_text": "consult pediatric neurologist",
+  "doctor_name": "Sandhya"
+}
+
+{"patient_id":"j789","doctor_name":"Dr. Tejasri","advice_text":"take care"}
+{"patient_id":"y6799","doctor_name":"Dr. Tejasri","advice_text":"take care"}
+{"doctor_name":"Nani","advice_text":"Likh gh.ljhjk\n","patient_id":"N121"}
+{"patient_id":"N121","advice_text":"Dhfmeyyh","doctor_name":"Rahul"}
+{"doctor_name":"Rahul","patient_id":"N121","advice_text":"Rtdhfhdf"}
+{"patient_id":"N121","doctor_name":"Rahul","advice_text":"Stuf jd tuke"}
+{"patient_id":"N121","doctor_name":"Rahul","advice_text":"Djyfjd"}
+{"advice_text":"Good","patient_id":"A111","doctor_name":"Arun"}
+{"patient_id":"A111","doctor_name":"Arun","advice_text":"Better"}
+{"doctor_name":"Arun","patient_id":"A113","assessment_id":20,"advice_text":"bad"}
+{"doctor_name":"Arun","assessment_id":8,"advice_text":"good","patient_id":"A111"}
+{"advice_text":"Better","assessment_id":7,"doctor_name":"Arun","patient_id":"A111"}
