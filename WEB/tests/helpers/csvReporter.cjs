@@ -33,7 +33,13 @@ class CsvReporter extends Base {
       
       const categoryRaw = test.parent ? test.parent.fullTitle() : 'AutismSuite';
       const suiteName = categoryRaw.replace(/^[0-9]+\.\s*/, '').replace(/[^a-zA-Z0-9_]/g, '_').replace(/_+/g, '_');
-      const tcNum = String(this.currentIndex).padStart(3, '0');
+      
+      let tcNum = String(this.currentIndex).padStart(3, '0');
+      const tcMatch = test.title.match(/^TC_(\d+):/i);
+      if (tcMatch) {
+        tcNum = tcMatch[1];
+      }
+      
       const rawTitleClean = test.title.replace(/^TC_\d+:\s*/i, '');
       const titleFormatted = rawTitleClean.replace(/[^a-zA-Z0-9_]/g, '_').replace(/_+/g, '_').toLowerCase();
       const tcName = `test_TC_${tcNum}_${titleFormatted}`;
@@ -59,7 +65,13 @@ class CsvReporter extends Base {
       
       const categoryRaw = test.parent ? test.parent.fullTitle() : 'AutismSuite';
       const suiteName = categoryRaw.replace(/^[0-9]+\.\s*/, '').replace(/[^a-zA-Z0-9_]/g, '_').replace(/_+/g, '_');
-      const tcNum = String(this.currentIndex).padStart(3, '0');
+      
+      let tcNum = String(this.currentIndex).padStart(3, '0');
+      const tcMatch = test.title.match(/^TC_(\d+):/i);
+      if (tcMatch) {
+        tcNum = tcMatch[1];
+      }
+      
       const rawTitleClean = test.title.replace(/^TC_\d+:\s*/i, '');
       const titleFormatted = rawTitleClean.replace(/[^a-zA-Z0-9_]/g, '_').replace(/_+/g, '_').toLowerCase();
       const tcName = `test_TC_${tcNum}_${titleFormatted}`;

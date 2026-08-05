@@ -81,12 +81,6 @@ jobs:
           cd WEB
           npm ci
 
-      - name: Start Vite Application Server
-        run: |
-          cd WEB
-          npm run dev &
-          npx wait-on http://localhost:5174 --timeout 30000
-
       - name: Run Appium Mobile Tests
         env:
           HEADLESS: 'true'
@@ -187,12 +181,6 @@ jobs:
           cd WEB
           npm ci
 
-      - name: Start Vite Application Server
-        run: |
-          cd WEB
-          npm run dev &
-          npx wait-on http://localhost:5174 --timeout 30000
-
       - name: Run Vulnerability Tests
         env:
           HEADLESS: 'true'
@@ -240,12 +228,6 @@ jobs:
           cd WEB
           npm ci
 
-      - name: Start Vite Application Server
-        run: |
-          cd WEB
-          npm run dev &
-          npx wait-on http://localhost:5174 --timeout 30000
-
       - name: Run Unit Tests
         env:
           HEADLESS: 'true'
@@ -292,12 +274,6 @@ jobs:
         run: |
           cd WEB
           npm ci
-
-      - name: Start Vite Application Server
-        run: |
-          cd WEB
-          npm run dev &
-          npx wait-on http://localhost:5174 --timeout 30000
 
       - name: Run Validation Tests
         env:
