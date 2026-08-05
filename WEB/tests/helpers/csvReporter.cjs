@@ -32,9 +32,10 @@ class CsvReporter extends Base {
       const percentStr = `[ ${String(percent).padStart(2, ' ')}%]`;
       
       const categoryRaw = test.parent ? test.parent.fullTitle() : 'AutismSuite';
-      const suiteName = categoryRaw.replace(/[^a-zA-Z0-9_]/g, '_').replace(/_+/g, '_');
+      const suiteName = categoryRaw.replace(/^[0-9]+\.\s*/, '').replace(/[^a-zA-Z0-9_]/g, '_').replace(/_+/g, '_');
       const tcNum = String(this.currentIndex).padStart(3, '0');
-      const titleFormatted = test.title.replace(/[^a-zA-Z0-9_]/g, '_').replace(/_+/g, '_').toLowerCase();
+      const rawTitleClean = test.title.replace(/^TC_\d+:\s*/i, '');
+      const titleFormatted = rawTitleClean.replace(/[^a-zA-Z0-9_]/g, '_').replace(/_+/g, '_').toLowerCase();
       const tcName = `test_TC_${tcNum}_${titleFormatted}`;
 
       const logLine = `test_autism.js::${suiteName}::${tcName} PASSED ${percentStr}`;
@@ -57,9 +58,10 @@ class CsvReporter extends Base {
       const percentStr = `[ ${String(percent).padStart(2, ' ')}%]`;
       
       const categoryRaw = test.parent ? test.parent.fullTitle() : 'AutismSuite';
-      const suiteName = categoryRaw.replace(/[^a-zA-Z0-9_]/g, '_').replace(/_+/g, '_');
+      const suiteName = categoryRaw.replace(/^[0-9]+\.\s*/, '').replace(/[^a-zA-Z0-9_]/g, '_').replace(/_+/g, '_');
       const tcNum = String(this.currentIndex).padStart(3, '0');
-      const titleFormatted = test.title.replace(/[^a-zA-Z0-9_]/g, '_').replace(/_+/g, '_').toLowerCase();
+      const rawTitleClean = test.title.replace(/^TC_\d+:\s*/i, '');
+      const titleFormatted = rawTitleClean.replace(/[^a-zA-Z0-9_]/g, '_').replace(/_+/g, '_').toLowerCase();
       const tcName = `test_TC_${tcNum}_${titleFormatted}`;
 
       const logLine = `test_autism.js::${suiteName}::${tcName} FAILED ${percentStr}`;
