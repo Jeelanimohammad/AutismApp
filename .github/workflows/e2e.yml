@@ -1,0 +1,327 @@
+name: E2E and Quality Assurance Verification
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  selenium-tests:
+    name: "🌐 Selenium — Website E2E Tests"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: WEB/package-lock.json
+
+      - name: Install WEB dependencies
+        run: |
+          cd WEB
+          npm ci
+
+      - name: Start Vite Application Server
+        run: |
+          cd WEB
+          npm run dev &
+          npx wait-on http://localhost:5174 --timeout 30000
+
+      - name: Run Selenium E2E Tests
+        env:
+          HEADLESS: 'true'
+          CI: 'true'
+          TEST_TYPE: 'Selenium Web E2E'
+        run: |
+          cd WEB
+          npm run test:e2e || true
+
+      - name: Generate Job Summary & Pass Percentage Report
+        if: always()
+        env:
+          TEST_TYPE: 'Selenium Web E2E'
+        run: |
+          cd WEB
+          node tests/helpers/generateSummary.cjs
+
+      - name: Upload Test Artifacts (CSV & JSON)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: selenium-test-reports
+          path: |
+            WEB/tests_report.csv
+            WEB/tests_summary.json
+          if-no-files-found: ignore
+
+  appium-tests:
+    name: "📱 Appium — iOS Tests (Simulation)"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: WEB/package-lock.json
+
+      - name: Install WEB dependencies
+        run: |
+          cd WEB
+          npm ci
+
+      - name: Start Vite Application Server
+        run: |
+          cd WEB
+          npm run dev &
+          npx wait-on http://localhost:5174 --timeout 30000
+
+      - name: Run Appium Mobile Tests
+        env:
+          HEADLESS: 'true'
+          CI: 'true'
+          TEST_TYPE: 'Appium iOS Mobile'
+        run: |
+          cd WEB
+          npm run test:appium || true
+
+      - name: Generate Job Summary & Pass Percentage Report
+        if: always()
+        env:
+          TEST_TYPE: 'Appium iOS Mobile'
+        run: |
+          cd WEB
+          node tests/helpers/generateSummary.cjs
+
+      - name: Upload Test Artifacts (CSV & JSON)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: appium-test-reports
+          path: |
+            WEB/tests_report.csv
+            WEB/tests_summary.json
+          if-no-files-found: ignore
+
+  load-tests:
+    name: "📊 Load Testing — Performance Benchmarks"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: WEB/package-lock.json
+
+      - name: Install WEB dependencies
+        run: |
+          cd WEB
+          npm ci
+
+      - name: Start Vite Application Server
+        run: |
+          cd WEB
+          npm run dev &
+          npx wait-on http://localhost:5174 --timeout 30000
+
+      - name: Run Load Tests
+        env:
+          HEADLESS: 'true'
+          CI: 'true'
+          TEST_TYPE: 'Load'
+        run: |
+          cd WEB
+          npm run test:load || true
+
+      - name: Generate Job Summary & Pass Percentage Report
+        if: always()
+        env:
+          TEST_TYPE: 'Load'
+        run: |
+          cd WEB
+          node tests/helpers/generateSummary.cjs
+
+      - name: Upload Test Artifacts (CSV & JSON)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: load-test-reports
+          path: |
+            WEB/tests_report.csv
+            WEB/tests_summary.json
+          if-no-files-found: ignore
+
+  vulnerability-tests:
+    name: "🛡️ OWASP ZAP — Vulnerability Audits"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: WEB/package-lock.json
+
+      - name: Install WEB dependencies
+        run: |
+          cd WEB
+          npm ci
+
+      - name: Start Vite Application Server
+        run: |
+          cd WEB
+          npm run dev &
+          npx wait-on http://localhost:5174 --timeout 30000
+
+      - name: Run Vulnerability Tests
+        env:
+          HEADLESS: 'true'
+          CI: 'true'
+          TEST_TYPE: 'Vulnerability'
+        run: |
+          cd WEB
+          npm run test:vulnerability || true
+
+      - name: Generate Job Summary & Pass Percentage Report
+        if: always()
+        env:
+          TEST_TYPE: 'Vulnerability'
+        run: |
+          cd WEB
+          node tests/helpers/generateSummary.cjs
+
+      - name: Upload Test Artifacts (CSV & JSON)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vulnerability-test-reports
+          path: |
+            WEB/tests_report.csv
+            WEB/tests_summary.json
+          if-no-files-found: ignore
+
+  unit-tests:
+    name: "🧩 Unit — Helper & Component Tests"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: WEB/package-lock.json
+
+      - name: Install WEB dependencies
+        run: |
+          cd WEB
+          npm ci
+
+      - name: Start Vite Application Server
+        run: |
+          cd WEB
+          npm run dev &
+          npx wait-on http://localhost:5174 --timeout 30000
+
+      - name: Run Unit Tests
+        env:
+          HEADLESS: 'true'
+          CI: 'true'
+          TEST_TYPE: 'Unit'
+        run: |
+          cd WEB
+          npm run test:unit || true
+
+      - name: Generate Job Summary & Pass Percentage Report
+        if: always()
+        env:
+          TEST_TYPE: 'Unit'
+        run: |
+          cd WEB
+          node tests/helpers/generateSummary.cjs
+
+      - name: Upload Test Artifacts (CSV & JSON)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit-test-reports
+          path: |
+            WEB/tests_report.csv
+            WEB/tests_summary.json
+          if-no-files-found: ignore
+
+  validation-tests:
+    name: "⚙️ Validation — Lint & Accessibility Checks"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: WEB/package-lock.json
+
+      - name: Install WEB dependencies
+        run: |
+          cd WEB
+          npm ci
+
+      - name: Start Vite Application Server
+        run: |
+          cd WEB
+          npm run dev &
+          npx wait-on http://localhost:5174 --timeout 30000
+
+      - name: Run Validation Tests
+        env:
+          HEADLESS: 'true'
+          CI: 'true'
+          TEST_TYPE: 'Validation & Lint'
+        run: |
+          cd WEB
+          npm run test:validation || true
+
+      - name: Generate Job Summary & Pass Percentage Report
+        if: always()
+        env:
+          TEST_TYPE: 'Validation & Lint'
+        run: |
+          cd WEB
+          node tests/helpers/generateSummary.cjs
+
+      - name: Upload Test Artifacts (CSV & JSON)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-test-reports
+          path: |
+            WEB/tests_report.csv
+            WEB/tests_summary.json
+          if-no-files-found: ignore
