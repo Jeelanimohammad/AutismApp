@@ -107,6 +107,8 @@ export default function PatientDetails() {
   const handleDownloadReport = () => {
     if (!selectedAsmt) return;
 
+    const reportWin = window.open('', '_blank');
+
     const reportContent = `<!DOCTYPE html>
 <html>
 <head>
@@ -115,9 +117,12 @@ export default function PatientDetails() {
   <style>
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #f8fafc; padding: 40px; margin: 0; }
     .card { max-width: 700px; margin: 0 auto; background: #1e293b; border-radius: 16px; border: 1px solid #334155; padding: 32px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3); }
-    .header { border-bottom: 1px solid #334155; padding-bottom: 20px; margin-bottom: 24px; }
+    .header { border-bottom: 1px solid #334155; padding-bottom: 20px; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center; }
     .logo { color: #06b6d4; font-size: 24px; font-weight: 900; letter-spacing: -0.5px; }
     .sub { color: #94a3b8; font-size: 13px; margin-top: 4px; }
+    .print-btn { background: #06b6d4; color: #0f172a; border: none; padding: 10px 18px; border-radius: 8px; font-weight: 800; cursor: pointer; font-size: 13px; transition: all 0.2s; }
+    .print-btn:hover { background: #22d3ee; }
+    @media print { .print-btn { display: none; } body { background: #fff; color: #000; padding: 0; } .card { border: none; box-shadow: none; background: #fff; color: #000; } .info-grid, .advice-box { background: #f1f5f9 !important; color: #000 !important; } .info-val { color: #000 !important; } }
     .section-title { font-size: 14px; font-weight: 800; text-transform: uppercase; color: #06b6d4; letter-spacing: 1px; margin: 24px 0 12px 0; }
     .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 14px; background: rgba(15,23,42,0.6); padding: 16px; border-radius: 8px; }
     .info-label { color: #94a3b8; }
@@ -132,8 +137,11 @@ export default function PatientDetails() {
 <body>
   <div class="card">
     <div class="header">
-      <div class="logo">AUTISCREEN</div>
-      <div class="sub">Clinical Evaluation & Assessment Report</div>
+      <div>
+        <div class="logo">AUTISCREEN</div>
+        <div class="sub">Clinical Evaluation & Assessment Report</div>
+      </div>
+      <button class="print-btn" onclick="window.print()">Print / Save as PDF</button>
     </div>
 
     <div class="info-grid">
@@ -159,17 +167,13 @@ export default function PatientDetails() {
 </body>
 </html>`;
 
-    const fileName = `Autism_ClinicalReport_${(patientName || 'Patient').replace(/[^a-zA-Z0-9_]/g, '_')}_${selectedAsmt.id}.html`;
-    const dataUri = 'data:text/html;charset=utf-8,' + encodeURIComponent(reportContent);
+    if (reportWin) {
+      reportWin.document.open();
+      reportWin.document.write(reportContent);
+      reportWin.document.close();
+    }
 
-    const a = document.createElement('a');
-    a.setAttribute('href', dataUri);
-    a.setAttribute('download', fileName);
-    a.style.display = 'none';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    toast.success('Report downloaded successfully.');
+    toast.success('Report opened in new window!');
   };
 
   const submitAdvice = async () => {

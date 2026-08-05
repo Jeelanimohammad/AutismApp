@@ -97,11 +97,16 @@ export default function AssessmentList() {
   };
 
   const handleDownloadReport = async (asmtId, resultMessage, createdAt) => {
+    // Open a new tab immediately while user click gesture is active
+    const reportWin = window.open('', '_blank');
+    if (reportWin) {
+      reportWin.document.write('<!DOCTYPE html><html><head><title>Loading Report...</title><style>body{background:#0f172a;color:#06b6d4;font-family:system-ui;display:flex;justify-content:center;align-items:center;height:100vh;margin:0;}</style></head><body><h2>Generating Clinical Evaluation Report...</h2></body></html>');
+    }
+
     let asmtDetails = details[asmtId];
     let asmtAdvice = advice[asmtId] || [];
 
     if (!asmtDetails) {
-      toast.info('Preparing report download...');
       try {
         const [resDet, resAdv] = await Promise.all([
           api.getAssessmentDetails(asmtId),
@@ -114,12 +119,14 @@ export default function AssessmentList() {
         asmtAdvice = Array.isArray(resAdv) ? resAdv : (resAdv.advice || []);
         setAdvice(prev => ({ ...prev, [asmtId]: asmtAdvice }));
       } catch (err) {
+        if (reportWin) reportWin.close();
         toast.error('Failed to load report data.');
         return;
       }
     }
 
     if (!asmtDetails) {
+      if (reportWin) reportWin.close();
       toast.error('Report data is not available.');
       return;
     }
@@ -132,9 +139,12 @@ export default function AssessmentList() {
   <style>
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #f8fafc; padding: 40px; margin: 0; }
     .card { max-width: 700px; margin: 0 auto; background: #1e293b; border-radius: 16px; border: 1px solid #334155; padding: 32px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3); }
-    .header { border-bottom: 1px solid #334155; padding-bottom: 20px; margin-bottom: 24px; }
+    .header { border-bottom: 1px solid #334155; padding-bottom: 20px; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center; }
     .logo { color: #06b6d4; font-size: 24px; font-weight: 900; letter-spacing: -0.5px; }
     .sub { color: #94a3b8; font-size: 13px; margin-top: 4px; }
+    .print-btn { background: #06b6d4; color: #0f172a; border: none; padding: 10px 18px; border-radius: 8px; font-weight: 800; cursor: pointer; font-size: 13px; transition: all 0.2s; }
+    .print-btn:hover { background: #22d3ee; }
+    @media print { .print-btn { display: none; } body { background: #fff; color: #000; padding: 0; } .card { border: none; box-shadow: none; background: #fff; color: #000; } .info-grid, .advice-box { background: #f1f5f9 !important; color: #000 !important; } .info-val { color: #000 !important; } }
     .section-title { font-size: 14px; font-weight: 800; text-transform: uppercase; color: #06b6d4; letter-spacing: 1px; margin: 24px 0 12px 0; }
     .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 14px; background: rgba(15,23,42,0.6); padding: 16px; border-radius: 8px; }
     .info-label { color: #94a3b8; }
@@ -149,8 +159,11 @@ export default function AssessmentList() {
 <body>
   <div class="card">
     <div class="header">
-      <div class="logo">AUTISCREEN</div>
-      <div class="sub">Official Clinical Autism Evaluation Report</div>
+      <div>
+        <div class="logo">AUTISCREEN</div>
+        <div class="sub">Official Clinical Autism Evaluation Report</div>
+      </div>
+      <button class="print-btn" onclick="window.print()">Print / Save as PDF</button>
     </div>
 
     <div class="info-grid">
@@ -176,17 +189,13 @@ export default function AssessmentList() {
 </body>
 </html>`;
 
-    const fileName = `Autism_PatientReport_${(patient?.name || 'Patient').replace(/[^a-zA-Z0-9_]/g, '_')}_${asmtId}.html`;
-    const dataUri = 'data:text/html;charset=utf-8,' + encodeURIComponent(reportContent);
+    if (reportWin) {
+      reportWin.document.open();
+      reportWin.document.write(reportContent);
+      reportWin.document.close();
+    }
 
-    const a = document.createElement('a');
-    a.setAttribute('href', dataUri);
-    a.setAttribute('download', fileName);
-    a.style.display = 'none';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    toast.success('Report downloaded successfully.');
+    toast.success('Report opened in new window!');
   };
 
   const processChartData = () => {
