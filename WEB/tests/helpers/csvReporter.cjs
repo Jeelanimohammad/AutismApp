@@ -3,40 +3,81 @@ const fs = require('fs');
 const path = require('path');
 
 const {
+  EVENT_RUN_BEGIN,
   EVENT_TEST_PASS,
   EVENT_TEST_FAIL,
   EVENT_RUN_END,
 } = mocha.Runner.constants;
 
-const Spec = mocha.reporters.Spec;
+const Base = mocha.reporters.Base;
 
-class CsvReporter extends Spec {
+class CsvReporter extends Base {
   constructor(runner, options) {
     super(runner, options);
     
     this.results = [];
+    this.currentIndex = 0;
+
+    runner.on(EVENT_RUN_BEGIN, () => {
+      this.totalTests = runner.total || 46;
+      this.currentIndex = 0;
+      this.startTime = Date.now();
+      console.log('\n=========================== test session starts ===========================');
+      console.log(`collecting ... collected ${this.totalTests} items\n`);
+    });
 
     runner.on(EVENT_TEST_PASS, (test) => {
+      this.currentIndex++;
+      const percent = Math.floor((this.currentIndex / this.totalTests) * 100);
+      const percentStr = `[ ${String(percent).padStart(2, ' ')}%]`;
+      
+      const categoryRaw = test.parent ? test.parent.fullTitle() : 'AutismSuite';
+      const suiteName = categoryRaw.replace(/[^a-zA-Z0-9_]/g, '_').replace(/_+/g, '_');
+      const tcNum = String(this.currentIndex).padStart(3, '0');
+      const titleFormatted = test.title.replace(/[^a-zA-Z0-9_]/g, '_').replace(/_+/g, '_').toLowerCase();
+      const tcName = `test_TC_${tcNum}_${titleFormatted}`;
+
+      const logLine = `test_autism.js::${suiteName}::${tcName} PASSED ${percentStr}`;
+      console.log(logLine);
+
       this.results.push({
-        category: test.parent ? test.parent.fullTitle() : 'Default',
+        category: categoryRaw,
         title: test.title,
+        tcName: tcName,
         status: 'PASSED',
         duration: test.duration || 0,
+        percent: `${percent}%`,
         error: ''
       });
     });
 
     runner.on(EVENT_TEST_FAIL, (test, err) => {
+      this.currentIndex++;
+      const percent = Math.floor((this.currentIndex / this.totalTests) * 100);
+      const percentStr = `[ ${String(percent).padStart(2, ' ')}%]`;
+      
+      const categoryRaw = test.parent ? test.parent.fullTitle() : 'AutismSuite';
+      const suiteName = categoryRaw.replace(/[^a-zA-Z0-9_]/g, '_').replace(/_+/g, '_');
+      const tcNum = String(this.currentIndex).padStart(3, '0');
+      const titleFormatted = test.title.replace(/[^a-zA-Z0-9_]/g, '_').replace(/_+/g, '_').toLowerCase();
+      const tcName = `test_TC_${tcNum}_${titleFormatted}`;
+
+      const logLine = `test_autism.js::${suiteName}::${tcName} FAILED ${percentStr}`;
+      console.log(logLine);
+
       this.results.push({
-        category: test.parent ? test.parent.fullTitle() : 'Default',
+        category: categoryRaw,
         title: test.title,
+        tcName: tcName,
         status: 'FAILED',
         duration: test.duration || 0,
+        percent: `${percent}%`,
         error: err ? err.message : 'Unknown error'
       });
     });
 
     runner.on(EVENT_RUN_END, () => {
+      const elapsedSec = ((Date.now() - (this.startTime || Date.now())) / 1000).toFixed(2);
       const csvPath = process.env.TEST_REPORT_PATH || path.resolve(process.cwd(), 'tests_report.csv');
       const jsonPath = path.resolve(path.dirname(csvPath), 'tests_summary.json');
       
@@ -49,7 +90,7 @@ class CsvReporter extends Spec {
         return str;
       };
 
-      const headers = ["Category", "Test Case Title", "Status", "Duration (ms)", "Failure Reason / Action if Failed"];
+      const headers = ["Category", "Test Case Title", "Status", "Progress %", "Duration (ms)", "Failure Reason / Action if Failed"];
       const rows = [headers];
 
       let passedCount = 0;
@@ -79,6 +120,7 @@ class CsvReporter extends Spec {
           res.category,
           res.title,
           res.status,
+          res.percent,
           res.duration,
           action
         ]);
@@ -99,8 +141,7 @@ class CsvReporter extends Spec {
       };
       fs.writeFileSync(jsonPath, JSON.stringify(summaryData, null, 2), 'utf8');
 
-      console.log(`\n📊 E2E Test Summary: ${passedCount}/${totalCount} Passed (${passPercentage}%)`);
-      console.log(`📊 Reports generated:\n   - CSV:  ${csvPath}\n   - JSON: ${jsonPath}\n`);
+      console.log(`\n==================== ${passedCount} passed, ${failedCount} failed in ${elapsedSec}s (${passPercentage}% Pass Rate) ====================\n`);
     });
   }
 }

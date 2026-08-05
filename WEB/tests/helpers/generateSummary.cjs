@@ -30,16 +30,18 @@ markdown += `| **${total}** | **${passed}** ✅ | **${failed}** ❌ | **${data.p
 markdown += `### 📈 Overall Pass Rate\n${progressBar}\n\n`;
 
 markdown += `### 📋 Detailed Testcases Results (${total} Total Testcases)\n\n`;
-markdown += `| # | Status | Test Case Name | Suite / Category | Duration |\n`;
-markdown += `| :--- | :--- | :--- | :--- | :--- |\n`;
+markdown += `| # | Status | Test Case Identifier | Title | Suite / Category | Progress % | Duration |\n`;
+markdown += `| :---: | :--- | :--- | :--- | :--- | :---: | :---: |\n`;
 
 data.results.forEach((res, index) => {
   const statusBadge = res.status === 'PASSED' ? '✅ **PASSED**' : '❌ **FAILED**';
   const durationSec = res.duration ? `${(res.duration / 1000).toFixed(2)}s` : '0s';
+  const tcName = res.tcName || `test_TC_${String(index + 1).padStart(3, '0')}`;
   const title = res.title.replace(/\|/g, '\\|');
   const category = res.category.replace(/\|/g, '\\|');
+  const percent = res.percent || `${Math.floor(((index + 1) / total) * 100)}%`;
   
-  markdown += `| ${index + 1} | ${statusBadge} | ${title} | ${category} | ${durationSec} |\n`;
+  markdown += `| ${index + 1} | ${statusBadge} | \`${tcName}\` | ${title} | ${category} | \`${percent}\` | ${durationSec} |\n`;
 });
 
 if (failed > 0) {
