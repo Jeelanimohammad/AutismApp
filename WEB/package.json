@@ -8,7 +8,13 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test:e2e": "npx mocha --require tests/helpers/rootHooks.js 'tests/*.test.js' --reporter tests/helpers/csvReporter.cjs --timeout 30000"
+    "test:e2e": "npx mocha --require tests/helpers/rootHooks.js 'tests/01_auth.test.js' 'tests/02_doctor.test.js' 'tests/03_patient.test.js' 'tests/04_components.test.js' 'tests/05_security.test.js' --reporter tests/helpers/csvReporter.cjs --timeout 30000",
+    "test:validation": "npx mocha --require tests/helpers/rootHooks.js 'tests/06_validation.test.js' --reporter tests/helpers/csvReporter.cjs --timeout 10000",
+    "test:unit": "npx mocha --require tests/helpers/rootHooks.js 'tests/07_unit.test.js' --reporter tests/helpers/csvReporter.cjs --timeout 10000",
+    "test:load": "npx mocha --require tests/helpers/rootHooks.js 'tests/08_load.test.js' --reporter tests/helpers/csvReporter.cjs --timeout 30000",
+    "test:vulnerability": "npx mocha --require tests/helpers/rootHooks.js 'tests/09_vulnerability.test.js' --reporter tests/helpers/csvReporter.cjs --timeout 30000",
+    "test:appium": "npx mocha --require tests/helpers/rootHooks.js 'tests/10_appium.test.js' --reporter tests/helpers/csvReporter.cjs --timeout 30000",
+    "test:all": "npx mocha --require tests/helpers/rootHooks.js 'tests/*.test.js' --reporter tests/helpers/csvReporter.cjs --timeout 60000"
   },
   "dependencies": {
     "lucide-react": "^1.16.0",

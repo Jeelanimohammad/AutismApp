@@ -1,4 +1,4 @@
-name: Selenium E2E Tests
+name: Integrated Testing Suite (E2E, Unit, Load, Security, Validation, Mobile)
 
 on:
   push:
@@ -8,8 +8,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  selenium-e2e-tests:
-    name: Run Selenium Web E2E Tests
+  integrated-tests:
+    name: Run Integrated Verification Suites
     runs-on: ubuntu-latest
 
     steps:
@@ -34,13 +34,13 @@ jobs:
           npm run dev &
           npx wait-on http://localhost:5174 --timeout 30000
 
-      - name: Run Selenium E2E Tests
+      - name: Run Integrated Verification Suites
         env:
           HEADLESS: 'true'
           CI: 'true'
         run: |
           cd WEB
-          npm run test:e2e || true
+          npm run test:all || true
 
       - name: Generate Job Summary & Pass Percentage Report
         if: always()
@@ -52,7 +52,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: selenium-test-reports
+          name: integrated-test-reports
           path: |
             WEB/tests_report.csv
             WEB/tests_summary.json
