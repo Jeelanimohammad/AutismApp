@@ -6,7 +6,7 @@
 export const BASE_URL = 'http://localhost:5174';
 
 /** Default timeout for element waits (ms) */
-export const DEFAULT_TIMEOUT = 10000;
+export const DEFAULT_TIMEOUT = 1000;
 
 /** Dummy credentials used across tests */
 export const TEST_DOCTOR = {

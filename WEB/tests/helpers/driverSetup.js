@@ -63,6 +63,6 @@ export async function clickOn(css) {
 }
 
 /** Small sleep helper (only use when truly needed). */
-export function sleep(ms = 1000) {
+export function sleep(ms = 100) {
   return new Promise((r) => setTimeout(r, ms));
 }
