@@ -14,6 +14,7 @@
     "test:load": "npx mocha 'tests/08_load.test.js' --reporter tests/helpers/csvReporter.cjs --timeout 30000",
     "test:vulnerability": "npx mocha 'tests/09_vulnerability.test.js' --reporter tests/helpers/csvReporter.cjs --timeout 30000",
     "test:appium": "npx mocha 'tests/10_appium.test.js' --reporter tests/helpers/csvReporter.cjs --timeout 30000",
+    "test:cicd": "npx mocha 'tests/11_cicd.test.js' --reporter tests/helpers/csvReporter.cjs --timeout 10000",
     "test:all": "npx mocha --require tests/helpers/rootHooks.js 'tests/*.test.js' --reporter tests/helpers/csvReporter.cjs --timeout 60000"
   },
   "dependencies": {

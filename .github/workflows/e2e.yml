@@ -301,3 +301,50 @@ jobs:
             WEB/tests_report.csv
             WEB/tests_summary.json
           if-no-files-found: ignore
+
+  cicd-tests:
+    name: "🚀 CI/CD — Pipeline Configuration Audits"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: WEB/package-lock.json
+
+      - name: Install WEB dependencies
+        run: |
+          cd WEB
+          npm ci
+
+      - name: Run CI/CD Tests
+        env:
+          HEADLESS: 'true'
+          CI: 'true'
+          TEST_TYPE: 'CI/CD Pipeline'
+        run: |
+          cd WEB
+          npm run test:cicd || true
+
+      - name: Generate Job Summary & Pass Percentage Report
+        if: always()
+        env:
+          TEST_TYPE: 'CI/CD Pipeline'
+        run: |
+          cd WEB
+          node tests/helpers/generateSummary.cjs
+
+      - name: Upload Test Artifacts (CSV & JSON)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cicd-test-reports
+          path: |
+            WEB/tests_report.csv
+            WEB/tests_summary.json
+          if-no-files-found: ignore
