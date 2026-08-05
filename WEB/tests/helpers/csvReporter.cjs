@@ -35,7 +35,7 @@ class CsvReporter extends Spec {
     });
 
     runner.on(EVENT_RUN_END, () => {
-      const csvPath = path.resolve('/Users/sail/Desktop/MEDICAL/WEB/tests_report.csv');
+      const csvPath = process.env.TEST_REPORT_PATH || path.resolve(process.cwd(), 'tests_report.csv');
       
       const escape = (val) => {
         if (val === undefined || val === null) return '';

@@ -15,8 +15,10 @@ export async function getDriver() {
   if (driver) return driver;
 
   const options = new chrome.Options();
-  // ──── Run headless for CI / remove for visual debugging ────
-  // options.addArguments('--headless=new');
+  // ──── Run headless in CI / headless environments ────
+  if (process.env.CI || process.env.HEADLESS === 'true') {
+    options.addArguments('--headless=new');
+  }
   options.addArguments('--no-sandbox');
   options.addArguments('--disable-dev-shm-usage');
   options.addArguments('--window-size=1440,900');
