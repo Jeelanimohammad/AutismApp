@@ -159,15 +159,16 @@ export default function PatientDetails() {
 </body>
 </html>`;
 
-    const blob = new Blob([reportContent], { type: 'text/html' });
-    const url = URL.createObjectURL(blob);
+    const fileName = `Autism_ClinicalReport_${(patientName || 'Patient').replace(/[^a-zA-Z0-9_]/g, '_')}_${selectedAsmt.id}.html`;
+    const dataUri = 'data:text/html;charset=utf-8,' + encodeURIComponent(reportContent);
+
     const a = document.createElement('a');
-    a.href = url;
-    a.download = `Autism_ClinicalReport_${patientName.replace(/\s+/g, '_')}_${selectedAsmt.id}.html`;
+    a.setAttribute('href', dataUri);
+    a.setAttribute('download', fileName);
+    a.style.display = 'none';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
-    setTimeout(() => URL.revokeObjectURL(url), 100);
     toast.success('Report downloaded successfully.');
   };
 

@@ -176,15 +176,16 @@ export default function AssessmentList() {
 </body>
 </html>`;
 
-    const blob = new Blob([reportContent], { type: 'text/html' });
-    const url = URL.createObjectURL(blob);
+    const fileName = `Autism_PatientReport_${(patient?.name || 'Patient').replace(/[^a-zA-Z0-9_]/g, '_')}_${asmtId}.html`;
+    const dataUri = 'data:text/html;charset=utf-8,' + encodeURIComponent(reportContent);
+
     const a = document.createElement('a');
-    a.href = url;
-    a.download = `Autism_PatientReport_${patient.name.replace(/\s+/g, '_')}_${asmtId}.html`;
+    a.setAttribute('href', dataUri);
+    a.setAttribute('download', fileName);
+    a.style.display = 'none';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
-    setTimeout(() => URL.revokeObjectURL(url), 100);
     toast.success('Report downloaded successfully.');
   };
 
