@@ -96,32 +96,91 @@ export default function AssessmentList() {
     });
   };
 
-  const handleDownloadReport = (asmtId, resultMessage, createdAt) => {
-    const asmtDetails = details[asmtId];
-    const asmtAdvice = advice[asmtId] || [];
-    if (!asmtDetails) return;
+  const handleDownloadReport = async (asmtId, resultMessage, createdAt) => {
+    let asmtDetails = details[asmtId];
+    let asmtAdvice = advice[asmtId] || [];
 
-    const reportContent = `
-AUTISCREEN - ASSESSMENT REPORT
-==============================
-Patient Name: ${patient.name}
-Patient ID: ${patient.patient_id}
-Date Evaluated: ${createdAt}
-Result Status: ${resultMessage}
+    if (!asmtDetails) {
+      toast.info('Preparing report download...');
+      try {
+        const [resDet, resAdv] = await Promise.all([
+          api.getAssessmentDetails(asmtId),
+          api.getAdvice(patient.patient_id, asmtId)
+        ]);
+        if (resDet.success) {
+          asmtDetails = resDet;
+          setDetails(prev => ({ ...prev, [asmtId]: resDet }));
+        }
+        asmtAdvice = Array.isArray(resAdv) ? resAdv : (resAdv.advice || []);
+        setAdvice(prev => ({ ...prev, [asmtId]: asmtAdvice }));
+      } catch (err) {
+        toast.error('Failed to load report data.');
+        return;
+      }
+    }
 
-SYMPTOM SURVEY RESPONSES
-------------------------
-${asmtDetails.responses.map(r => `${r.symptom_display_name || r.symptom_name}: ${r.response}`).join('\n')}
+    if (!asmtDetails) {
+      toast.error('Report data is not available.');
+      return;
+    }
 
-CLINICAL GUIDANCE & FEEDBACK
-----------------------------
-${asmtAdvice.length > 0 ? asmtAdvice.map(a => `[${a.created_at}] Dr. ${a.doctor_name}: ${a.advice_text}`).join('\n') : 'No clinical guidance posted yet.'}
-`;
-    const blob = new Blob([reportContent], { type: 'text/plain' });
+    const reportContent = `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Autism Screening Report - ${patient.name}</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #f8fafc; padding: 40px; margin: 0; }
+    .card { max-width: 700px; margin: 0 auto; background: #1e293b; border-radius: 16px; border: 1px solid #334155; padding: 32px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3); }
+    .header { border-bottom: 1px solid #334155; padding-bottom: 20px; margin-bottom: 24px; }
+    .logo { color: #06b6d4; font-size: 24px; font-weight: 900; letter-spacing: -0.5px; }
+    .sub { color: #94a3b8; font-size: 13px; margin-top: 4px; }
+    .section-title { font-size: 14px; font-weight: 800; text-transform: uppercase; color: #06b6d4; letter-spacing: 1px; margin: 24px 0 12px 0; }
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 14px; background: rgba(15,23,42,0.6); padding: 16px; border-radius: 8px; }
+    .info-label { color: #94a3b8; }
+    .info-val { color: #f8fafc; font-weight: 700; }
+    .badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 800; background: rgba(6,182,212,0.2); color: #06b6d4; }
+    table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #334155; }
+    th { color: #94a3b8; font-size: 11px; text-transform: uppercase; }
+    .advice-box { background: rgba(15,23,42,0.6); border-left: 3px solid #06b6d4; padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 10px; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <div class="logo">AUTISCREEN</div>
+      <div class="sub">Official Clinical Autism Evaluation Report</div>
+    </div>
+
+    <div class="info-grid">
+      <div><span class="info-label">Patient Name:</span> <span class="info-val">${patient.name}</span></div>
+      <div><span class="info-label">Patient ID:</span> <span class="info-val">#${patient.patient_id}</span></div>
+      <div><span class="info-label">Date Evaluated:</span> <span class="info-val">${createdAt}</span></div>
+      <div><span class="info-label">Result:</span> <span class="badge">${resultMessage}</span></div>
+    </div>
+
+    <div class="section-title">Symptom Assessment Responses</div>
+    <table>
+      <thead>
+        <tr><th>Symptom Indicator</th><th>Response</th></tr>
+      </thead>
+      <tbody>
+        ${(asmtDetails.responses || []).map(r => `<tr><td>${r.symptom_display_name || r.symptom_name}</td><td><strong>${r.response}</strong></td></tr>`).join('')}
+      </tbody>
+    </table>
+
+    <div class="section-title">Doctor Notes & Clinical Feedback</div>
+    ${asmtAdvice.length > 0 ? asmtAdvice.map(a => `<div class="advice-box"><strong>Dr. ${a.doctor_name}</strong> <span style="color:#64748b; font-size:12px">(${a.created_at})</span><br><div style="margin-top:4px">${a.advice_text}</div></div>`).join('') : '<p style="color:#64748b; font-size:14px">No clinical guidance recorded yet.</p>'}
+  </div>
+</body>
+</html>`;
+
+    const blob = new Blob([reportContent], { type: 'text/html' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `Autism_PatientReport_${patient.name}_${asmtId}.txt`;
+    a.download = `Autism_PatientReport_${patient.name.replace(/\s+/g, '_')}_${asmtId}.html`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
