@@ -42,38 +42,18 @@ jobs:
           cd WEB
           npm run test:e2e
 
-      - name: Generate Job Summary & Report
+      - name: Generate Job Summary & Pass Percentage Report
         if: always()
         run: |
-          echo "## 🧪 Selenium E2E Test Execution Summary" >> $GITHUB_STEP_SUMMARY
-          if [ -f "WEB/tests_report.csv" ]; then
-            echo "### 📊 Test Results Overview" >> $GITHUB_STEP_SUMMARY
-            echo "| Status | Category | Test Case Title | Action / Details |" >> $GITHUB_STEP_SUMMARY
-            echo "| :--- | :--- | :--- | :--- |" >> $GITHUB_STEP_SUMMARY
-            
-            tail -n +2 WEB/tests_report.csv | while IFS=',' read -r category title status action; do
-              # Clean quotes
-              category=$(echo "$category" | sed 's/"//g')
-              title=$(echo "$title" | sed 's/"//g')
-              status=$(echo "$status" | sed 's/"//g')
-              action=$(echo "$action" | sed 's/"//g')
-              
-              if [ "$status" = "PASSED" ]; then
-                badge="✅ **PASSED**"
-              else
-                badge="❌ **FAILED**"
-              fi
-              
-              echo "| $badge | $category | $title | $action |" >> $GITHUB_STEP_SUMMARY
-            done
-          else
-            echo "⚠️ `tests_report.csv` file not found." >> $GITHUB_STEP_SUMMARY
-          fi
+          cd WEB
+          node tests/helpers/generateSummary.cjs
 
-      - name: Upload Test Report CSV Artifact
+      - name: Upload Test Artifacts (CSV & JSON)
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: selenium-test-report
-          path: WEB/tests_report.csv
+          name: selenium-test-reports
+          path: |
+            WEB/tests_report.csv
+            WEB/tests_summary.json
           if-no-files-found: ignore

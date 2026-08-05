@@ -95,11 +95,11 @@ describe('Doctor Workflow Tests', function () {
       await typeInto('input[placeholder="Parent\'s email"]', 'e2etest@gmail.com');
       await typeInto('input[placeholder="Set login password"]', 'pass1234');
 
-      const femaleBtn = await driver.findElement(By.xpath("//button[text()='Female']"));
+      const femaleBtn = await driver.wait(until.elementLocated(By.xpath("//button[contains(text(),'Female')]")), DEFAULT_TIMEOUT);
       await femaleBtn.click();
       await sleep(500);
 
-      const submitBtn = await driver.findElement(By.css('button[type="submit"]'));
+      const submitBtn = await driver.wait(until.elementLocated(By.css('button[type="submit"]')), DEFAULT_TIMEOUT);
       await submitBtn.click();
       await sleep(2500);
 

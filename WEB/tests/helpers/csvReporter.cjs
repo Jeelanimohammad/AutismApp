@@ -21,6 +21,7 @@ class CsvReporter extends Spec {
         category: test.parent ? test.parent.fullTitle() : 'Default',
         title: test.title,
         status: 'PASSED',
+        duration: test.duration || 0,
         error: ''
       });
     });
@@ -30,12 +31,14 @@ class CsvReporter extends Spec {
         category: test.parent ? test.parent.fullTitle() : 'Default',
         title: test.title,
         status: 'FAILED',
-        error: err.message
+        duration: test.duration || 0,
+        error: err ? err.message : 'Unknown error'
       });
     });
 
     runner.on(EVENT_RUN_END, () => {
       const csvPath = process.env.TEST_REPORT_PATH || path.resolve(process.cwd(), 'tests_report.csv');
+      const jsonPath = path.resolve(path.dirname(csvPath), 'tests_summary.json');
       
       const escape = (val) => {
         if (val === undefined || val === null) return '';
@@ -46,10 +49,16 @@ class CsvReporter extends Spec {
         return str;
       };
 
-      const headers = ["Category", "Test Case Title", "Status", "Failure Reason / Action if Failed"];
+      const headers = ["Category", "Test Case Title", "Status", "Duration (ms)", "Failure Reason / Action if Failed"];
       const rows = [headers];
 
+      let passedCount = 0;
+      let failedCount = 0;
+
       for (const res of this.results) {
+        if (res.status === 'PASSED') passedCount++;
+        else failedCount++;
+
         let action = '';
         if (res.status === 'FAILED') {
           action = `Error: ${res.error}\n\nTroubleshooting:\n`;
@@ -70,13 +79,28 @@ class CsvReporter extends Spec {
           res.category,
           res.title,
           res.status,
+          res.duration,
           action
         ]);
       }
 
+      const totalCount = this.results.length;
+      const passPercentage = totalCount > 0 ? ((passedCount / totalCount) * 100).toFixed(1) : '0';
+
       const csvContent = rows.map(r => r.map(escape).join(',')).join('\n');
       fs.writeFileSync(csvPath, csvContent, 'utf8');
-      console.log(`\n📊 E2E Test Report successfully generated at: ${csvPath}\n`);
+
+      const summaryData = {
+        total: totalCount,
+        passed: passedCount,
+        failed: failedCount,
+        passPercentage: `${passPercentage}%`,
+        results: this.results
+      };
+      fs.writeFileSync(jsonPath, JSON.stringify(summaryData, null, 2), 'utf8');
+
+      console.log(`\n📊 E2E Test Summary: ${passedCount}/${totalCount} Passed (${passPercentage}%)`);
+      console.log(`📊 Reports generated:\n   - CSV:  ${csvPath}\n   - JSON: ${jsonPath}\n`);
     });
   }
 }
