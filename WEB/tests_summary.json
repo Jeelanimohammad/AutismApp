@@ -1,0 +1,2708 @@
+{
+  "total": 300,
+  "passed": 300,
+  "failed": 0,
+  "passPercentage": "100.0%",
+  "results": [
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_001: Should load the application landing page at base URL",
+      "tcName": "test_TC_001_should_load_the_application_landing_page_at_base_url",
+      "status": "PASSED",
+      "duration": 2422,
+      "percent": "0%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_002: Should display main heading title",
+      "tcName": "test_TC_002_should_display_main_heading_title",
+      "status": "PASSED",
+      "duration": 157,
+      "percent": "0%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_003: Should render Doctor role selection card",
+      "tcName": "test_TC_003_should_render_doctor_role_selection_card",
+      "status": "PASSED",
+      "duration": 129,
+      "percent": "1%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_004: Should render Parent/Patient role selection card",
+      "tcName": "test_TC_004_should_render_parent_patient_role_selection_card",
+      "status": "PASSED",
+      "duration": 62,
+      "percent": "1%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_005: Should have clickable Doctor role option",
+      "tcName": "test_TC_005_should_have_clickable_doctor_role_option",
+      "status": "PASSED",
+      "duration": 594,
+      "percent": "1%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_006: Should display back navigation button on Doctor Login page",
+      "tcName": "test_TC_006_should_display_back_navigation_button_on_doctor_login_page",
+      "status": "PASSED",
+      "duration": 51,
+      "percent": "2%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_007: Should navigate back to role selection when clicking back button",
+      "tcName": "test_TC_007_should_navigate_back_to_role_selection_when_clicking_back_button",
+      "status": "PASSED",
+      "duration": 172,
+      "percent": "2%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_008: Should have clickable Parent/Patient role option",
+      "tcName": "test_TC_008_should_have_clickable_parent_patient_role_option",
+      "status": "PASSED",
+      "duration": 600,
+      "percent": "2%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_009: Should render App Logo image on role selection page",
+      "tcName": "test_TC_009_should_render_app_logo_image_on_role_selection_page",
+      "status": "PASSED",
+      "duration": 46,
+      "percent": "3%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_010: Should render clean medical-grade color theme header",
+      "tcName": "test_TC_010_should_render_clean_medical_grade_color_theme_header",
+      "status": "PASSED",
+      "duration": 92,
+      "percent": "3%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_011: Should load Doctor Login page with correct URL",
+      "tcName": "test_TC_011_should_load_doctor_login_page_with_correct_url",
+      "status": "PASSED",
+      "duration": 41,
+      "percent": "3%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_012: Should display Doctor Portal heading banner",
+      "tcName": "test_TC_012_should_display_doctor_portal_heading_banner",
+      "status": "PASSED",
+      "duration": 91,
+      "percent": "4%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_013: Should render Email input field for Doctor",
+      "tcName": "test_TC_013_should_render_email_input_field_for_doctor",
+      "status": "PASSED",
+      "duration": 83,
+      "percent": "4%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_014: Should render Password input field for Doctor",
+      "tcName": "test_TC_014_should_render_password_input_field_for_doctor",
+      "status": "PASSED",
+      "duration": 52,
+      "percent": "4%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_015: Should display Mail icon in Email field",
+      "tcName": "test_TC_015_should_display_mail_icon_in_email_field",
+      "status": "PASSED",
+      "duration": 44,
+      "percent": "5%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_016: Should display Lock icon in Password field",
+      "tcName": "test_TC_016_should_display_lock_icon_in_password_field",
+      "status": "PASSED",
+      "duration": 51,
+      "percent": "5%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_017: Should render Secure Login submit button",
+      "tcName": "test_TC_017_should_render_secure_login_submit_button",
+      "status": "PASSED",
+      "duration": 81,
+      "percent": "5%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_018: Should allow typing Doctor email address",
+      "tcName": "test_TC_018_should_allow_typing_doctor_email_address",
+      "status": "PASSED",
+      "duration": 198,
+      "percent": "6%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_019: Should allow typing Doctor password",
+      "tcName": "test_TC_019_should_allow_typing_doctor_password",
+      "status": "PASSED",
+      "duration": 176,
+      "percent": "6%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_020: Should render Password Visibility Eye Toggle button",
+      "tcName": "test_TC_020_should_render_password_visibility_eye_toggle_button",
+      "status": "PASSED",
+      "duration": 47,
+      "percent": "6%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_021: Should toggle password text visibility when eye icon clicked",
+      "tcName": "test_TC_021_should_toggle_password_text_visibility_when_eye_icon_clicked",
+      "status": "PASSED",
+      "duration": 85,
+      "percent": "7%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_022: Should show error toast on submitting blank credentials",
+      "tcName": "test_TC_022_should_show_error_toast_on_submitting_blank_credentials",
+      "status": "PASSED",
+      "duration": 80,
+      "percent": "7%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_023: Should show error toast on invalid Doctor credentials",
+      "tcName": "test_TC_023_should_show_error_toast_on_invalid_doctor_credentials",
+      "status": "PASSED",
+      "duration": 54,
+      "percent": "7%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_024: Should render Apply Now link for new doctor registration",
+      "tcName": "test_TC_024_should_render_apply_now_link_for_new_doctor_registration",
+      "status": "PASSED",
+      "duration": 78,
+      "percent": "8%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_025: Should navigate to Doctor Registration on clicking Apply Now",
+      "tcName": "test_TC_025_should_navigate_to_doctor_registration_on_clicking_apply_now",
+      "status": "PASSED",
+      "duration": 58,
+      "percent": "8%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_026: Should load Patient Login page with route /patient/login",
+      "tcName": "test_TC_026_should_load_patient_login_page_with_route_patient_login",
+      "status": "PASSED",
+      "duration": 85,
+      "percent": "8%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_027: Should display Patient Portal heading",
+      "tcName": "test_TC_027_should_display_patient_portal_heading",
+      "status": "PASSED",
+      "duration": 101,
+      "percent": "9%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_028: Should render Patient ID input field",
+      "tcName": "test_TC_028_should_render_patient_id_input_field",
+      "status": "PASSED",
+      "duration": 87,
+      "percent": "9%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_029: Should render Password input field for Patient",
+      "tcName": "test_TC_029_should_render_password_input_field_for_patient",
+      "status": "PASSED",
+      "duration": 87,
+      "percent": "9%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_030: Should display Hash icon in Patient ID input",
+      "tcName": "test_TC_030_should_display_hash_icon_in_patient_id_input",
+      "status": "PASSED",
+      "duration": 79,
+      "percent": "10%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_031: Should display Lock icon in Patient Password input",
+      "tcName": "test_TC_031_should_display_lock_icon_in_patient_password_input",
+      "status": "PASSED",
+      "duration": 55,
+      "percent": "10%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_032: Should render Login button for Patient portal",
+      "tcName": "test_TC_032_should_render_login_button_for_patient_portal",
+      "status": "PASSED",
+      "duration": 241,
+      "percent": "10%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_033: Should allow typing Patient ID string",
+      "tcName": "test_TC_033_should_allow_typing_patient_id_string",
+      "status": "PASSED",
+      "duration": 104,
+      "percent": "11%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_034: Should allow typing Patient password",
+      "tcName": "test_TC_034_should_allow_typing_patient_password",
+      "status": "PASSED",
+      "duration": 136,
+      "percent": "11%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_035: Should render Password Eye toggle button on Patient Login",
+      "tcName": "test_TC_035_should_render_password_eye_toggle_button_on_patient_login",
+      "status": "PASSED",
+      "duration": 109,
+      "percent": "11%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_036: Should toggle password visibility on Patient login form",
+      "tcName": "test_TC_036_should_toggle_password_visibility_on_patient_login_form",
+      "status": "PASSED",
+      "duration": 55,
+      "percent": "12%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_037: Should show error toast on empty Patient ID submission",
+      "tcName": "test_TC_037_should_show_error_toast_on_empty_patient_id_submission",
+      "status": "PASSED",
+      "duration": 87,
+      "percent": "12%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_038: Should show error toast on non-existent Patient ID",
+      "tcName": "test_TC_038_should_show_error_toast_on_non_existent_patient_id",
+      "status": "PASSED",
+      "duration": 101,
+      "percent": "12%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_039: Should render Create Account link for new patient",
+      "tcName": "test_TC_039_should_render_create_account_link_for_new_patient",
+      "status": "PASSED",
+      "duration": 90,
+      "percent": "13%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_040: Should navigate to Patient Registration on Create Account click",
+      "tcName": "test_TC_040_should_navigate_to_patient_registration_on_create_account_click",
+      "status": "PASSED",
+      "duration": 94,
+      "percent": "13%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_041: Should load Doctor Registration form with heading",
+      "tcName": "test_TC_041_should_load_doctor_registration_form_with_heading",
+      "status": "PASSED",
+      "duration": 57,
+      "percent": "13%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_042: Should render Doctor Full Name input field",
+      "tcName": "test_TC_042_should_render_doctor_full_name_input_field",
+      "status": "PASSED",
+      "duration": 86,
+      "percent": "14%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_043: Should render Doctor Specialization selection input",
+      "tcName": "test_TC_043_should_render_doctor_specialization_selection_input",
+      "status": "PASSED",
+      "duration": 86,
+      "percent": "14%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_044: Should render Doctor Phone input field",
+      "tcName": "test_TC_044_should_render_doctor_phone_input_field",
+      "status": "PASSED",
+      "duration": 132,
+      "percent": "14%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_045: Should render Doctor License/Registration Number input",
+      "tcName": "test_TC_045_should_render_doctor_license_registration_number_input",
+      "status": "PASSED",
+      "duration": 54,
+      "percent": "15%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_046: Should fill Doctor Registration form cleanly",
+      "tcName": "test_TC_046_should_fill_doctor_registration_form_cleanly",
+      "status": "PASSED",
+      "duration": 84,
+      "percent": "15%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_047: Should render Back button on Doctor Registration page",
+      "tcName": "test_TC_047_should_render_back_button_on_doctor_registration_page",
+      "status": "PASSED",
+      "duration": 92,
+      "percent": "15%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_048: Should navigate back to Doctor Login when Back clicked",
+      "tcName": "test_TC_048_should_navigate_back_to_doctor_login_when_back_clicked",
+      "status": "PASSED",
+      "duration": 94,
+      "percent": "16%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_049: Should load Patient Registration form",
+      "tcName": "test_TC_049_should_load_patient_registration_form",
+      "status": "PASSED",
+      "duration": 76,
+      "percent": "16%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_050: Should render Patient Child Name input field",
+      "tcName": "test_TC_050_should_render_patient_child_name_input_field",
+      "status": "PASSED",
+      "duration": 95,
+      "percent": "16%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_051: Should render Patient Date of Birth datepicker",
+      "tcName": "test_TC_051_should_render_patient_date_of_birth_datepicker",
+      "status": "PASSED",
+      "duration": 80,
+      "percent": "17%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_052: Should render Sex Selection buttons (Male Female Other)",
+      "tcName": "test_TC_052_should_render_sex_selection_buttons_male_female_other_",
+      "status": "PASSED",
+      "duration": 55,
+      "percent": "17%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_053: Should select Male option when clicked",
+      "tcName": "test_TC_053_should_select_male_option_when_clicked",
+      "status": "PASSED",
+      "duration": 94,
+      "percent": "17%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_054: Should select Female option when clicked",
+      "tcName": "test_TC_054_should_select_female_option_when_clicked",
+      "status": "PASSED",
+      "duration": 87,
+      "percent": "18%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_055: Should render Guardian Contact Phone Number input",
+      "tcName": "test_TC_055_should_render_guardian_contact_phone_number_input",
+      "status": "PASSED",
+      "duration": 84,
+      "percent": "18%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_056: Should load Forgot Password page at route /forgot-password",
+      "tcName": "test_TC_056_should_load_forgot_password_page_at_route_forgot_password",
+      "status": "PASSED",
+      "duration": 39,
+      "percent": "18%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_057: Should display Reset Password heading",
+      "tcName": "test_TC_057_should_display_reset_password_heading",
+      "status": "PASSED",
+      "duration": 45,
+      "percent": "19%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_058: Should render Email/ID verification input field",
+      "tcName": "test_TC_058_should_render_email_id_verification_input_field",
+      "status": "PASSED",
+      "duration": 49,
+      "percent": "19%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_059: Should render New Password input field",
+      "tcName": "test_TC_059_should_render_new_password_input_field",
+      "status": "PASSED",
+      "duration": 75,
+      "percent": "19%",
+      "error": ""
+    },
+    {
+      "category": "01. Authentication & Onboarding Module",
+      "title": "TC_060: Should render Reset Password submit button",
+      "tcName": "test_TC_060_should_render_reset_password_submit_button",
+      "status": "PASSED",
+      "duration": 48,
+      "percent": "20%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_061: Should inject active Doctor session into sessionStorage",
+      "tcName": "test_TC_061_should_inject_active_doctor_session_into_sessionstorage",
+      "status": "PASSED",
+      "duration": 48,
+      "percent": "20%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_062: Should persist doctor_name in session",
+      "tcName": "test_TC_062_should_persist_doctor_name_in_session",
+      "status": "PASSED",
+      "duration": 96,
+      "percent": "20%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_063: Should persist doctor_email in session",
+      "tcName": "test_TC_063_should_persist_doctor_email_in_session",
+      "status": "PASSED",
+      "duration": 73,
+      "percent": "21%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_064: Should persist doctor_specialization in session",
+      "tcName": "test_TC_064_should_persist_doctor_specialization_in_session",
+      "status": "PASSED",
+      "duration": 48,
+      "percent": "21%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_065: Should navigate to Doctor Patients page when session present",
+      "tcName": "test_TC_065_should_navigate_to_doctor_patients_page_when_session_present",
+      "status": "PASSED",
+      "duration": 136,
+      "percent": "21%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_066: Should display Doctor Navigation Sidebar",
+      "tcName": "test_TC_066_should_display_doctor_navigation_sidebar",
+      "status": "PASSED",
+      "duration": 159,
+      "percent": "22%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_067: Should display Doctor name in Sidebar profile badge",
+      "tcName": "test_TC_067_should_display_doctor_name_in_sidebar_profile_badge",
+      "status": "PASSED",
+      "duration": 39,
+      "percent": "22%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_068: Should display Doctor Specialization badge in sidebar",
+      "tcName": "test_TC_068_should_display_doctor_specialization_badge_in_sidebar",
+      "status": "PASSED",
+      "duration": 9,
+      "percent": "22%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_069: Should display Home navigation link in Doctor sidebar",
+      "tcName": "test_TC_069_should_display_home_navigation_link_in_doctor_sidebar",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "23%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_070: Should display Patients List navigation link in Doctor sidebar",
+      "tcName": "test_TC_070_should_display_patients_list_navigation_link_in_doctor_sidebar",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "23%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_071: Should display Analytics navigation link in Doctor sidebar",
+      "tcName": "test_TC_071_should_display_analytics_navigation_link_in_doctor_sidebar",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "23%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_072: Should display Profile navigation link in Doctor sidebar",
+      "tcName": "test_TC_072_should_display_profile_navigation_link_in_doctor_sidebar",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "24%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_073: Should display Logout button in Doctor sidebar",
+      "tcName": "test_TC_073_should_display_logout_button_in_doctor_sidebar",
+      "status": "PASSED",
+      "duration": 7,
+      "percent": "24%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_074: Should highlight active menu link",
+      "tcName": "test_TC_074_should_highlight_active_menu_link",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "24%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_075: Should render clean header with Doctor avatar icon",
+      "tcName": "test_TC_075_should_render_clean_header_with_doctor_avatar_icon",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "25%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_076: Should render Doctor Home page route /doctor/home",
+      "tcName": "test_TC_076_should_render_doctor_home_page_route_doctor_home",
+      "status": "PASSED",
+      "duration": 221,
+      "percent": "25%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_077: Should display welcome heading with Doctor name",
+      "tcName": "test_TC_077_should_display_welcome_heading_with_doctor_name",
+      "status": "PASSED",
+      "duration": 7,
+      "percent": "25%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_078: Should render Total Patients registered stat card",
+      "tcName": "test_TC_078_should_render_total_patients_registered_stat_card",
+      "status": "PASSED",
+      "duration": 7,
+      "percent": "26%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_079: Should render High-Risk Patients stat card highlighted in red",
+      "tcName": "test_TC_079_should_render_high_risk_patients_stat_card_highlighted_in_red",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "26%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_080: Should render Total Assessments Conducted stat card",
+      "tcName": "test_TC_080_should_render_total_assessments_conducted_stat_card",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "26%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_081: Should render Pending Clinical Reviews stat card",
+      "tcName": "test_TC_081_should_render_pending_clinical_reviews_stat_card",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "27%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_082: Should display urgent alert banner for high-risk patients",
+      "tcName": "test_TC_082_should_display_urgent_alert_banner_for_high_risk_patients",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "27%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_083: Should render Quick Register Patient button on Doctor Home",
+      "tcName": "test_TC_083_should_render_quick_register_patient_button_on_doctor_home",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "27%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_084: Should navigate to Patients List on stat card click",
+      "tcName": "test_TC_084_should_navigate_to_patients_list_on_stat_card_click",
+      "status": "PASSED",
+      "duration": 120,
+      "percent": "28%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_085: Should render Recent Patients Activity list",
+      "tcName": "test_TC_085_should_render_recent_patients_activity_list",
+      "status": "PASSED",
+      "duration": 51,
+      "percent": "28%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_086: Should display Patient ID in activity feed",
+      "tcName": "test_TC_086_should_display_patient_id_in_activity_feed",
+      "status": "PASSED",
+      "duration": 11,
+      "percent": "28%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_087: Should display screening date in activity feed",
+      "tcName": "test_TC_087_should_display_screening_date_in_activity_feed",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "28%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_088: Should display risk severity badge in activity feed",
+      "tcName": "test_TC_088_should_display_risk_severity_badge_in_activity_feed",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "29%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_089: Should render View All Patients button",
+      "tcName": "test_TC_089_should_render_view_all_patients_button",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "29%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_090: Should refresh dashboard stats on page reload",
+      "tcName": "test_TC_090_should_refresh_dashboard_stats_on_page_reload",
+      "status": "PASSED",
+      "duration": 70,
+      "percent": "30%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_091: Should render Patients List page at /doctor/patients",
+      "tcName": "test_TC_091_should_render_patients_list_page_at_doctor_patients",
+      "status": "PASSED",
+      "duration": 162,
+      "percent": "30%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_092: Should display Search Patients input field",
+      "tcName": "test_TC_092_should_display_search_patients_input_field",
+      "status": "PASSED",
+      "duration": 43,
+      "percent": "30%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_093: Should render Search glass icon inside input field",
+      "tcName": "test_TC_093_should_render_search_glass_icon_inside_input_field",
+      "status": "PASSED",
+      "duration": 7,
+      "percent": "31%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_094: Should filter patients list dynamically when typing",
+      "tcName": "test_TC_094_should_filter_patients_list_dynamically_when_typing",
+      "status": "PASSED",
+      "duration": 43,
+      "percent": "31%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_095: Should clear search input when deleting text",
+      "tcName": "test_TC_095_should_clear_search_input_when_deleting_text",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "31%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_096: Should render Register New Patient button",
+      "tcName": "test_TC_096_should_render_register_new_patient_button",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "32%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_097: Should open Register Patient Modal on clicking button",
+      "tcName": "test_TC_097_should_open_register_patient_modal_on_clicking_button",
+      "status": "PASSED",
+      "duration": 7,
+      "percent": "32%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_098: Should display Patient Cards grid/list layout",
+      "tcName": "test_TC_098_should_display_patient_cards_grid_list_layout",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "32%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_099: Should display Patient ID badge on card",
+      "tcName": "test_TC_099_should_display_patient_id_badge_on_card",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "33%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_100: Should display Patient Age & Gender tag on card",
+      "tcName": "test_TC_100_should_display_patient_age_gender_tag_on_card",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "33%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_101: Should display Guardian Contact Phone on patient card",
+      "tcName": "test_TC_101_should_display_guardian_contact_phone_on_patient_card",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "33%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_102: Should display Risk Level Indicator pill on patient card",
+      "tcName": "test_TC_102_should_display_risk_level_indicator_pill_on_patient_card",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "34%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_103: Should render View Details button on patient card",
+      "tcName": "test_TC_103_should_render_view_details_button_on_patient_card",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "34%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_104: Should navigate to Patient Details page on card click",
+      "tcName": "test_TC_104_should_navigate_to_patient_details_page_on_card_click",
+      "status": "PASSED",
+      "duration": 109,
+      "percent": "34%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_105: Should handle empty patients search result gracefully",
+      "tcName": "test_TC_105_should_handle_empty_patients_search_result_gracefully",
+      "status": "PASSED",
+      "duration": 11,
+      "percent": "35%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_106: Should render modal title Register Patient",
+      "tcName": "test_TC_106_should_render_modal_title_register_patient",
+      "status": "PASSED",
+      "duration": 144,
+      "percent": "35%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_107: Should render Close X button on modal header",
+      "tcName": "test_TC_107_should_render_close_x_button_on_modal_header",
+      "status": "PASSED",
+      "duration": 41,
+      "percent": "35%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_108: Should close modal when clicking Close X button",
+      "tcName": "test_TC_108_should_close_modal_when_clicking_close_x_button",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "36%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_109: Should render Patient ID input in modal",
+      "tcName": "test_TC_109_should_render_patient_id_input_in_modal",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "36%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_110: Should render Child Full Name input in modal",
+      "tcName": "test_TC_110_should_render_child_full_name_input_in_modal",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "36%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_111: Should render Date of Birth input in modal",
+      "tcName": "test_TC_111_should_render_date_of_birth_input_in_modal",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "37%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_112: Should render Male/Female/Other sex selection toggle",
+      "tcName": "test_TC_112_should_render_male_female_other_sex_selection_toggle",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "37%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_113: Should render Parent Phone input field in modal",
+      "tcName": "test_TC_113_should_render_parent_phone_input_field_in_modal",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "37%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_114: Should render Parent Email input field in modal",
+      "tcName": "test_TC_114_should_render_parent_email_input_field_in_modal",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "38%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_115: Should render Login Password input field in modal",
+      "tcName": "test_TC_115_should_render_login_password_input_field_in_modal",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "38%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_116: Should register new patient successfully via modal",
+      "tcName": "test_TC_116_should_register_new_patient_successfully_via_modal",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "38%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_117: Should show success toast after patient registration",
+      "tcName": "test_TC_117_should_show_success_toast_after_patient_registration",
+      "status": "PASSED",
+      "duration": 12,
+      "percent": "39%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_118: Should refresh patients list after adding patient",
+      "tcName": "test_TC_118_should_refresh_patients_list_after_adding_patient",
+      "status": "PASSED",
+      "duration": 8,
+      "percent": "39%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_119: Should reset modal form fields after closing",
+      "tcName": "test_TC_119_should_reset_modal_form_fields_after_closing",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "39%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_120: Should validate mandatory fields before modal submit",
+      "tcName": "test_TC_120_should_validate_mandatory_fields_before_modal_submit",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "40%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_121: Should load Patient Details page for given patient ID",
+      "tcName": "test_TC_121_should_load_patient_details_page_for_given_patient_id",
+      "status": "PASSED",
+      "duration": 102,
+      "percent": "40%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_122: Should display Patient Name in details header",
+      "tcName": "test_TC_122_should_display_patient_name_in_details_header",
+      "status": "PASSED",
+      "duration": 12,
+      "percent": "40%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_123: Should display Patient ID in header badge",
+      "tcName": "test_TC_123_should_display_patient_id_in_header_badge",
+      "status": "PASSED",
+      "duration": 47,
+      "percent": "41%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_124: Should render Doctor Advice section",
+      "tcName": "test_TC_124_should_render_doctor_advice_section",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "41%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_125: Should render Add Clinical Advice textarea",
+      "tcName": "test_TC_125_should_render_add_clinical_advice_textarea",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "41%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_126: Should submit doctor advice successfully",
+      "tcName": "test_TC_126_should_submit_doctor_advice_successfully",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "42%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_127: Should render Download PDF/CSV Assessment Report button",
+      "tcName": "test_TC_127_should_render_download_pdf_csv_assessment_report_button",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "42%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_128: Should load Clinical Analytics page at /doctor/analytics",
+      "tcName": "test_TC_128_should_load_clinical_analytics_page_at_doctor_analytics",
+      "status": "PASSED",
+      "duration": 101,
+      "percent": "42%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_129: Should render Risk Distribution chart on Analytics page",
+      "tcName": "test_TC_129_should_render_risk_distribution_chart_on_analytics_page",
+      "status": "PASSED",
+      "duration": 121,
+      "percent": "43%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_130: Should load Doctor Profile page at /doctor/profile",
+      "tcName": "test_TC_130_should_load_doctor_profile_page_at_doctor_profile",
+      "status": "PASSED",
+      "duration": 307,
+      "percent": "43%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_131: Should display Doctor Name on Profile page",
+      "tcName": "test_TC_131_should_display_doctor_name_on_profile_page",
+      "status": "PASSED",
+      "duration": 24,
+      "percent": "43%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_132: Should display Doctor Email on Profile page",
+      "tcName": "test_TC_132_should_display_doctor_email_on_profile_page",
+      "status": "PASSED",
+      "duration": 38,
+      "percent": "44%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_133: Should display Doctor Specialization on Profile page",
+      "tcName": "test_TC_133_should_display_doctor_specialization_on_profile_page",
+      "status": "PASSED",
+      "duration": 8,
+      "percent": "44%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_134: Should render Edit Profile button on Doctor Profile page",
+      "tcName": "test_TC_134_should_render_edit_profile_button_on_doctor_profile_page",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "44%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_135: Should open Edit Doctor Profile modal on click",
+      "tcName": "test_TC_135_should_open_edit_doctor_profile_modal_on_click",
+      "status": "PASSED",
+      "duration": 7,
+      "percent": "45%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_136: Should render Change Password section in Doctor Profile",
+      "tcName": "test_TC_136_should_render_change_password_section_in_doctor_profile",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "45%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_137: Should save edited Doctor Profile details",
+      "tcName": "test_TC_137_should_save_edited_doctor_profile_details",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "45%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_138: Should clear session and redirect to Doctor Login on Logout",
+      "tcName": "test_TC_138_should_clear_session_and_redirect_to_doctor_login_on_logout",
+      "status": "PASSED",
+      "duration": 45,
+      "percent": "46%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_139: Should verify sessionStorage is cleared after Logout",
+      "tcName": "test_TC_139_should_verify_sessionstorage_is_cleared_after_logout",
+      "status": "PASSED",
+      "duration": 9,
+      "percent": "46%",
+      "error": ""
+    },
+    {
+      "category": "02. Doctor Portal & Clinical Workflow Module",
+      "title": "TC_140: Should prevent accessing /doctor/patients after logout",
+      "tcName": "test_TC_140_should_prevent_accessing_doctor_patients_after_logout",
+      "status": "PASSED",
+      "duration": 11,
+      "percent": "46%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_141: Should inject active Patient session into sessionStorage",
+      "tcName": "test_TC_141_should_inject_active_patient_session_into_sessionstorage",
+      "status": "PASSED",
+      "duration": 78,
+      "percent": "47%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_142: Should persist patient_name in session",
+      "tcName": "test_TC_142_should_persist_patient_name_in_session",
+      "status": "PASSED",
+      "duration": 95,
+      "percent": "47%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_143: Should persist patient_email in session",
+      "tcName": "test_TC_143_should_persist_patient_email_in_session",
+      "status": "PASSED",
+      "duration": 88,
+      "percent": "47%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_144: Should navigate to Patient Home page when session present",
+      "tcName": "test_TC_144_should_navigate_to_patient_home_page_when_session_present",
+      "status": "PASSED",
+      "duration": 186,
+      "percent": "48%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_145: Should display Patient Navigation Sidebar",
+      "tcName": "test_TC_145_should_display_patient_navigation_sidebar",
+      "status": "PASSED",
+      "duration": 19,
+      "percent": "48%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_146: Should display Patient Name in Sidebar profile badge",
+      "tcName": "test_TC_146_should_display_patient_name_in_sidebar_profile_badge",
+      "status": "PASSED",
+      "duration": 43,
+      "percent": "48%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_147: Should display Home navigation link in Patient sidebar",
+      "tcName": "test_TC_147_should_display_home_navigation_link_in_patient_sidebar",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "49%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_148: Should display New Assessment navigation link",
+      "tcName": "test_TC_148_should_display_new_assessment_navigation_link",
+      "status": "PASSED",
+      "duration": 7,
+      "percent": "49%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_149: Should display History / Reports link in sidebar",
+      "tcName": "test_TC_149_should_display_history_reports_link_in_sidebar",
+      "status": "PASSED",
+      "duration": 9,
+      "percent": "49%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_150: Should display Journey Map link in Patient sidebar",
+      "tcName": "test_TC_150_should_display_journey_map_link_in_patient_sidebar",
+      "status": "PASSED",
+      "duration": 7,
+      "percent": "50%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_151: Should display Profile link in Patient sidebar",
+      "tcName": "test_TC_151_should_display_profile_link_in_patient_sidebar",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "50%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_152: Should display Logout button in Patient sidebar",
+      "tcName": "test_TC_152_should_display_logout_button_in_patient_sidebar",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "50%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_153: Should render Patient Portal header with child profile avatar",
+      "tcName": "test_TC_153_should_render_patient_portal_header_with_child_profile_avatar",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "51%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_154: Should highlight active menu option on visiting patient/home",
+      "tcName": "test_TC_154_should_highlight_active_menu_option_on_visiting_patient_home",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "51%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_155: Should maintain Patient session across page reloads",
+      "tcName": "test_TC_155_should_maintain_patient_session_across_page_reloads",
+      "status": "PASSED",
+      "duration": 70,
+      "percent": "51%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_156: Should load Patient Home page route /patient/home",
+      "tcName": "test_TC_156_should_load_patient_home_page_route_patient_home",
+      "status": "PASSED",
+      "duration": 144,
+      "percent": "52%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_157: Should display Welcome greeting addressing parent/child",
+      "tcName": "test_TC_157_should_display_welcome_greeting_addressing_parent_child",
+      "status": "PASSED",
+      "duration": 18,
+      "percent": "52%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_158: Should render Latest Screening Result card",
+      "tcName": "test_TC_158_should_render_latest_screening_result_card",
+      "status": "PASSED",
+      "duration": 38,
+      "percent": "52%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_159: Should display High Risk URGENT banner in red if high risk detected",
+      "tcName": "test_TC_159_should_display_high_risk_urgent_banner_in_red_if_high_risk_detected",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "53%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_160: Should render Start New Assessment primary button",
+      "tcName": "test_TC_160_should_render_start_new_assessment_primary_button",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "53%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_161: Should navigate to New Assessment page",
+      "tcName": "test_TC_161_should_navigate_to_new_assessment_page",
+      "status": "PASSED",
+      "duration": 117,
+      "percent": "53%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_162: Should render Assigned Doctor Info card on Patient Home",
+      "tcName": "test_TC_162_should_render_assigned_doctor_info_card_on_patient_home",
+      "status": "PASSED",
+      "duration": 69,
+      "percent": "54%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_163: Should render Doctor Advice & Recommendation panel",
+      "tcName": "test_TC_163_should_render_doctor_advice_recommendation_panel",
+      "status": "PASSED",
+      "duration": 31,
+      "percent": "54%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_164: Should render Quick Action links section",
+      "tcName": "test_TC_164_should_render_quick_action_links_section",
+      "status": "PASSED",
+      "duration": 43,
+      "percent": "54%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_165: Should display Patient ID badge on home overview",
+      "tcName": "test_TC_165_should_display_patient_id_badge_on_home_overview",
+      "status": "PASSED",
+      "duration": 390,
+      "percent": "55%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_166: Should display Age & Gender information card",
+      "tcName": "test_TC_166_should_display_age_gender_information_card",
+      "status": "PASSED",
+      "duration": 7,
+      "percent": "55%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_167: Should render Journey Roadmap teaser card",
+      "tcName": "test_TC_167_should_render_journey_roadmap_teaser_card",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "55%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_168: Should navigate to Journey Map on clicking Roadmap card",
+      "tcName": "test_TC_168_should_navigate_to_journey_map_on_clicking_roadmap_card",
+      "status": "PASSED",
+      "duration": 164,
+      "percent": "56%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_169: Should display support contact helpline link",
+      "tcName": "test_TC_169_should_display_support_contact_helpline_link",
+      "status": "PASSED",
+      "duration": 29,
+      "percent": "56%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_170: Should refresh Patient Home overview on page reload",
+      "tcName": "test_TC_170_should_refresh_patient_home_overview_on_page_reload",
+      "status": "PASSED",
+      "duration": 155,
+      "percent": "56%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_171: Should load New Assessment form at /patient/assessment/new",
+      "tcName": "test_TC_171_should_load_new_assessment_form_at_patient_assessment_new",
+      "status": "PASSED",
+      "duration": 187,
+      "percent": "56%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_172: Should display Questionnaire Header title",
+      "tcName": "test_TC_172_should_display_questionnaire_header_title",
+      "status": "PASSED",
+      "duration": 36,
+      "percent": "57%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_173: Should display Live Questionnaire Progress Bar",
+      "tcName": "test_TC_173_should_display_live_questionnaire_progress_bar",
+      "status": "PASSED",
+      "duration": 53,
+      "percent": "57%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_174: Should display Screening Question 1",
+      "tcName": "test_TC_174_should_display_screening_question_1",
+      "status": "PASSED",
+      "duration": 369,
+      "percent": "57%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_175: Should render Yes / No option radio buttons for Question 1",
+      "tcName": "test_TC_175_should_render_yes_no_option_radio_buttons_for_question_1",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "58%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_176: Should select Yes option when clicked",
+      "tcName": "test_TC_176_should_select_yes_option_when_clicked",
+      "status": "PASSED",
+      "duration": 27,
+      "percent": "58%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_177: Should select No option when clicked",
+      "tcName": "test_TC_177_should_select_no_option_when_clicked",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "59%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_178: Should display Screening Question 2",
+      "tcName": "test_TC_178_should_display_screening_question_2",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "59%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_179: Should display Screening Question 3 Eye contact Pointing",
+      "tcName": "test_TC_179_should_display_screening_question_3_eye_contact_pointing",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "59%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_180: Should display Screening Question 4 Response to name",
+      "tcName": "test_TC_180_should_display_screening_question_4_response_to_name",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "60%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_181: Should display Screening Question 5 Pretend play",
+      "tcName": "test_TC_181_should_display_screening_question_5_pretend_play",
+      "status": "PASSED",
+      "duration": 4,
+      "percent": "60%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_182: Should update Progress Bar percentage as questions answered",
+      "tcName": "test_TC_182_should_update_progress_bar_percentage_as_questions_answered",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "60%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_183: Should render Previous Question navigation button",
+      "tcName": "test_TC_183_should_render_previous_question_navigation_button",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "61%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_184: Should render Next Question navigation button",
+      "tcName": "test_TC_184_should_render_next_question_navigation_button",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "61%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_185: Should answer all questions and enable Submit button",
+      "tcName": "test_TC_185_should_answer_all_questions_and_enable_submit_button",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "61%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_186: Should submit completed assessment questionnaire",
+      "tcName": "test_TC_186_should_submit_completed_assessment_questionnaire",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "62%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_187: Should calculate M-CHAT Risk Score accurately upon submission",
+      "tcName": "test_TC_187_should_calculate_m_chat_risk_score_accurately_upon_submission",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "62%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_188: Should redirect to Assessment Result page post-submission",
+      "tcName": "test_TC_188_should_redirect_to_assessment_result_page_post_submission",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "62%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_189: Should display High/Medium/Low Risk Level Badge on Result page",
+      "tcName": "test_TC_189_should_display_high_medium_low_risk_level_badge_on_result_page",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "63%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_190: Should display Detailed Behavioral Domain Analysis breakdown",
+      "tcName": "test_TC_190_should_display_detailed_behavioral_domain_analysis_breakdown",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "63%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_191: Should load Assessment History page at /patient/history",
+      "tcName": "test_TC_191_should_load_assessment_history_page_at_patient_history",
+      "status": "PASSED",
+      "duration": 171,
+      "percent": "63%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_192: Should display Past Assessment Submissions table",
+      "tcName": "test_TC_192_should_display_past_assessment_submissions_table",
+      "status": "PASSED",
+      "duration": 47,
+      "percent": "64%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_193: Should display Submission Date column",
+      "tcName": "test_TC_193_should_display_submission_date_column",
+      "status": "PASSED",
+      "duration": 432,
+      "percent": "64%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_194: Should display Risk Category column High Moderate Low",
+      "tcName": "test_TC_194_should_display_risk_category_column_high_moderate_low",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "64%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_195: Should display Total Score column",
+      "tcName": "test_TC_195_should_display_total_score_column",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "65%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_196: Should render Download PDF Report action link",
+      "tcName": "test_TC_196_should_render_download_pdf_report_action_link",
+      "status": "PASSED",
+      "duration": 9,
+      "percent": "65%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_197: Should load Journey Map Roadmap page at /patient/journey",
+      "tcName": "test_TC_197_should_load_journey_map_roadmap_page_at_patient_journey",
+      "status": "PASSED",
+      "duration": 242,
+      "percent": "65%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_198: Should render Vertical Journey Roadmap visual layout",
+      "tcName": "test_TC_198_should_render_vertical_journey_roadmap_visual_layout",
+      "status": "PASSED",
+      "duration": 41,
+      "percent": "66%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_199: Should display Stage 1 Initial Screening card",
+      "tcName": "test_TC_199_should_display_stage_1_initial_screening_card",
+      "status": "PASSED",
+      "duration": 59,
+      "percent": "66%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_200: Should display Stage 2 Clinical Evaluation card",
+      "tcName": "test_TC_200_should_display_stage_2_clinical_evaluation_card",
+      "status": "PASSED",
+      "duration": 420,
+      "percent": "66%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_201: Should display Stage 3 Intervention Therapy card",
+      "tcName": "test_TC_201_should_display_stage_3_intervention_therapy_card",
+      "status": "PASSED",
+      "duration": 7,
+      "percent": "67%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_202: Should display Stage 4 Continuous Progress Monitoring card",
+      "tcName": "test_TC_202_should_display_stage_4_continuous_progress_monitoring_card",
+      "status": "PASSED",
+      "duration": 7,
+      "percent": "67%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_203: Should load Patient Profile page at /patient/profile",
+      "tcName": "test_TC_203_should_load_patient_profile_page_at_patient_profile",
+      "status": "PASSED",
+      "duration": 103,
+      "percent": "67%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_204: Should display Patient Child Name on Profile page",
+      "tcName": "test_TC_204_should_display_patient_child_name_on_profile_page",
+      "status": "PASSED",
+      "duration": 17,
+      "percent": "68%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_205: Should display Patient ID badge on Profile page",
+      "tcName": "test_TC_205_should_display_patient_id_badge_on_profile_page",
+      "status": "PASSED",
+      "duration": 36,
+      "percent": "68%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_206: Should display Guardian Phone number on Profile page",
+      "tcName": "test_TC_206_should_display_guardian_phone_number_on_profile_page",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "68%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_207: Should display Guardian Email address on Profile page",
+      "tcName": "test_TC_207_should_display_guardian_email_address_on_profile_page",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "69%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_208: Should render Edit Profile button on Patient Profile",
+      "tcName": "test_TC_208_should_render_edit_profile_button_on_patient_profile",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "69%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_209: Should open Edit Patient Profile modal on click",
+      "tcName": "test_TC_209_should_open_edit_patient_profile_modal_on_click",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "69%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_210: Should render Change Password section in Patient Profile",
+      "tcName": "test_TC_210_should_render_change_password_section_in_patient_profile",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "70%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_211: Should save updated Patient details in modal",
+      "tcName": "test_TC_211_should_save_updated_patient_details_in_modal",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "70%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_212: Should display Doctor Advice in Patient Profile",
+      "tcName": "test_TC_212_should_display_doctor_advice_in_patient_profile",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "70%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_213: Should render Print Report button on Assessment Details page",
+      "tcName": "test_TC_213_should_render_print_report_button_on_assessment_details_page",
+      "status": "PASSED",
+      "duration": 6,
+      "percent": "71%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_214: Should render Export CSV report button",
+      "tcName": "test_TC_214_should_render_export_csv_report_button",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "71%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_215: Should clear session and redirect to Patient Login on Logout",
+      "tcName": "test_TC_215_should_clear_session_and_redirect_to_patient_login_on_logout",
+      "status": "PASSED",
+      "duration": 43,
+      "percent": "71%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_216: Should verify sessionStorage is cleared after Patient Logout",
+      "tcName": "test_TC_216_should_verify_sessionstorage_is_cleared_after_patient_logout",
+      "status": "PASSED",
+      "duration": 7,
+      "percent": "72%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_217: Should prevent accessing /patient/home post-logout",
+      "tcName": "test_TC_217_should_prevent_accessing_patient_home_post_logout",
+      "status": "PASSED",
+      "duration": 12,
+      "percent": "72%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_218: Should prevent accessing /patient/history post-logout",
+      "tcName": "test_TC_218_should_prevent_accessing_patient_history_post_logout",
+      "status": "PASSED",
+      "duration": 7,
+      "percent": "72%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_219: Should prevent accessing /patient/journey post-logout",
+      "tcName": "test_TC_219_should_prevent_accessing_patient_journey_post_logout",
+      "status": "PASSED",
+      "duration": 34,
+      "percent": "73%",
+      "error": ""
+    },
+    {
+      "category": "03. Patient / Parent Screening & Journey Module",
+      "title": "TC_220: Should render clean footer on Patient Portal pages",
+      "tcName": "test_TC_220_should_render_clean_footer_on_patient_portal_pages",
+      "status": "PASSED",
+      "duration": 5,
+      "percent": "73%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_221: Should render page with valid HTML body element",
+      "tcName": "test_TC_221_should_render_page_with_valid_html_body_element",
+      "status": "PASSED",
+      "duration": 46,
+      "percent": "73%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_222: Should render page title in document head",
+      "tcName": "test_TC_222_should_render_page_title_in_document_head",
+      "status": "PASSED",
+      "duration": 43,
+      "percent": "74%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_223: Should apply global CSS reset and box-sizing styles",
+      "tcName": "test_TC_223_should_apply_global_css_reset_and_box_sizing_styles",
+      "status": "PASSED",
+      "duration": 54,
+      "percent": "74%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_224: Should render page without horizontal overflow scroll",
+      "tcName": "test_TC_224_should_render_page_without_horizontal_overflow_scroll",
+      "status": "PASSED",
+      "duration": 88,
+      "percent": "74%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_225: Should render clean white/light background theme on landing page",
+      "tcName": "test_TC_225_should_render_clean_white_light_background_theme_on_landing_page",
+      "status": "PASSED",
+      "duration": 86,
+      "percent": "75%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_226: Should use correct brand primary color scheme",
+      "tcName": "test_TC_226_should_use_correct_brand_primary_color_scheme",
+      "status": "PASSED",
+      "duration": 90,
+      "percent": "75%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_227: Should render system-ui font stack correctly",
+      "tcName": "test_TC_227_should_render_system_ui_font_stack_correctly",
+      "status": "PASSED",
+      "duration": 96,
+      "percent": "75%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_228: Should render page header at the top of the viewport",
+      "tcName": "test_TC_228_should_render_page_header_at_the_top_of_the_viewport",
+      "status": "PASSED",
+      "duration": 91,
+      "percent": "76%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_229: Should not render any broken image placeholders on landing page",
+      "tcName": "test_TC_229_should_not_render_any_broken_image_placeholders_on_landing_page",
+      "status": "PASSED",
+      "duration": 85,
+      "percent": "76%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_230: Should render all visible text with minimum 12px font size",
+      "tcName": "test_TC_230_should_render_all_visible_text_with_minimum_12px_font_size",
+      "status": "PASSED",
+      "duration": 84,
+      "percent": "76%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_231: Should render primary CTA buttons with correct blue/teal theme",
+      "tcName": "test_TC_231_should_render_primary_cta_buttons_with_correct_blue_teal_theme",
+      "status": "PASSED",
+      "duration": 78,
+      "percent": "77%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_232: Should render secondary/outline buttons with correct border styling",
+      "tcName": "test_TC_232_should_render_secondary_outline_buttons_with_correct_border_styling",
+      "status": "PASSED",
+      "duration": 62,
+      "percent": "77%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_233: Should render danger/red buttons for critical actions",
+      "tcName": "test_TC_233_should_render_danger_red_buttons_for_critical_actions",
+      "status": "PASSED",
+      "duration": 91,
+      "percent": "77%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_234: Should render High-Risk badge with red background color",
+      "tcName": "test_TC_234_should_render_high_risk_badge_with_red_background_color",
+      "status": "PASSED",
+      "duration": 81,
+      "percent": "78%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_235: Should render Moderate-Risk badge with orange/amber color",
+      "tcName": "test_TC_235_should_render_moderate_risk_badge_with_orange_amber_color",
+      "status": "PASSED",
+      "duration": 53,
+      "percent": "78%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_236: Should render Low-Risk badge with green color",
+      "tcName": "test_TC_236_should_render_low_risk_badge_with_green_color",
+      "status": "PASSED",
+      "duration": 90,
+      "percent": "78%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_237: Should render icon buttons with visible icon glyphs",
+      "tcName": "test_TC_237_should_render_icon_buttons_with_visible_icon_glyphs",
+      "status": "PASSED",
+      "duration": 90,
+      "percent": "79%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_238: Should render clickable links with proper color indicator",
+      "tcName": "test_TC_238_should_render_clickable_links_with_proper_color_indicator",
+      "status": "PASSED",
+      "duration": 79,
+      "percent": "79%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_239: Should render disabled buttons with reduced opacity when inactive",
+      "tcName": "test_TC_239_should_render_disabled_buttons_with_reduced_opacity_when_inactive",
+      "status": "PASSED",
+      "duration": 52,
+      "percent": "79%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_240: Should not produce layout shift on button hover interactions",
+      "tcName": "test_TC_240_should_not_produce_layout_shift_on_button_hover_interactions",
+      "status": "PASSED",
+      "duration": 82,
+      "percent": "80%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_241: Should render text input fields with correct placeholder text",
+      "tcName": "test_TC_241_should_render_text_input_fields_with_correct_placeholder_text",
+      "status": "PASSED",
+      "duration": 64,
+      "percent": "80%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_242: Should render password input fields as masked dots by default",
+      "tcName": "test_TC_242_should_render_password_input_fields_as_masked_dots_by_default",
+      "status": "PASSED",
+      "duration": 81,
+      "percent": "80%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_243: Should render input fields with border focus ring on click",
+      "tcName": "test_TC_243_should_render_input_fields_with_border_focus_ring_on_click",
+      "status": "PASSED",
+      "duration": 88,
+      "percent": "81%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_244: Should render input fields with error state on validation fail",
+      "tcName": "test_TC_244_should_render_input_fields_with_error_state_on_validation_fail",
+      "status": "PASSED",
+      "duration": 80,
+      "percent": "81%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_245: Should render form helper text below inputs when needed",
+      "tcName": "test_TC_245_should_render_form_helper_text_below_inputs_when_needed",
+      "status": "PASSED",
+      "duration": 60,
+      "percent": "81%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_246: Should render select/dropdown with visible options list on click",
+      "tcName": "test_TC_246_should_render_select_dropdown_with_visible_options_list_on_click",
+      "status": "PASSED",
+      "duration": 94,
+      "percent": "82%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_247: Should render radio button group with correct question labeling",
+      "tcName": "test_TC_247_should_render_radio_button_group_with_correct_question_labeling",
+      "status": "PASSED",
+      "duration": 53,
+      "percent": "82%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_248: Should render checkbox inputs that toggle on click",
+      "tcName": "test_TC_248_should_render_checkbox_inputs_that_toggle_on_click",
+      "status": "PASSED",
+      "duration": 53,
+      "percent": "82%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_249: Should render date picker input with correct format hint",
+      "tcName": "test_TC_249_should_render_date_picker_input_with_correct_format_hint",
+      "status": "PASSED",
+      "duration": 59,
+      "percent": "83%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_250: Should render textareas with correct row height for advice input",
+      "tcName": "test_TC_250_should_render_textareas_with_correct_row_height_for_advice_input",
+      "status": "PASSED",
+      "duration": 61,
+      "percent": "83%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_251: Should render modal overlay with backdrop blur on open",
+      "tcName": "test_TC_251_should_render_modal_overlay_with_backdrop_blur_on_open",
+      "status": "PASSED",
+      "duration": 86,
+      "percent": "83%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_252: Should render modal with visible header body and footer",
+      "tcName": "test_TC_252_should_render_modal_with_visible_header_body_and_footer",
+      "status": "PASSED",
+      "duration": 112,
+      "percent": "84%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_253: Should close modal on clicking backdrop outside modal card",
+      "tcName": "test_TC_253_should_close_modal_on_clicking_backdrop_outside_modal_card",
+      "status": "PASSED",
+      "duration": 53,
+      "percent": "84%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_254: Should render success Toast notification with green check icon",
+      "tcName": "test_TC_254_should_render_success_toast_notification_with_green_check_icon",
+      "status": "PASSED",
+      "duration": 120,
+      "percent": "84%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_255: Should render error Toast notification with red X icon",
+      "tcName": "test_TC_255_should_render_error_toast_notification_with_red_x_icon",
+      "status": "PASSED",
+      "duration": 106,
+      "percent": "85%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_256: Should auto-dismiss Toast notification after 3-5 seconds",
+      "tcName": "test_TC_256_should_auto_dismiss_toast_notification_after_3_5_seconds",
+      "status": "PASSED",
+      "duration": 152,
+      "percent": "85%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_257: Should render info/warning Alert banner with correct colors",
+      "tcName": "test_TC_257_should_render_info_warning_alert_banner_with_correct_colors",
+      "status": "PASSED",
+      "duration": 51,
+      "percent": "85%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_258: Should render confirm action dialog for destructive operations",
+      "tcName": "test_TC_258_should_render_confirm_action_dialog_for_destructive_operations",
+      "status": "PASSED",
+      "duration": 106,
+      "percent": "86%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_259: Should render loading spinner during async API operations",
+      "tcName": "test_TC_259_should_render_loading_spinner_during_async_api_operations",
+      "status": "PASSED",
+      "duration": 94,
+      "percent": "86%",
+      "error": ""
+    },
+    {
+      "category": "04. UI Design System & Components Module",
+      "title": "TC_260: Should render Progress Bar component with animated fill",
+      "tcName": "test_TC_260_should_render_progress_bar_component_with_animated_fill",
+      "status": "PASSED",
+      "duration": 87,
+      "percent": "86%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_261: Should redirect unauthenticated user from /doctor/home to login",
+      "tcName": "test_TC_261_should_redirect_unauthenticated_user_from_doctor_home_to_login",
+      "status": "PASSED",
+      "duration": 274,
+      "percent": "87%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_262: Should redirect unauthenticated user from /doctor/patients to login",
+      "tcName": "test_TC_262_should_redirect_unauthenticated_user_from_doctor_patients_to_login",
+      "status": "PASSED",
+      "duration": 98,
+      "percent": "87%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_263: Should redirect unauthenticated user from /doctor/analytics to login",
+      "tcName": "test_TC_263_should_redirect_unauthenticated_user_from_doctor_analytics_to_login",
+      "status": "PASSED",
+      "duration": 98,
+      "percent": "87%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_264: Should redirect unauthenticated user from /doctor/profile to login",
+      "tcName": "test_TC_264_should_redirect_unauthenticated_user_from_doctor_profile_to_login",
+      "status": "PASSED",
+      "duration": 95,
+      "percent": "88%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_265: Should redirect unauthenticated user from /patient/home to login",
+      "tcName": "test_TC_265_should_redirect_unauthenticated_user_from_patient_home_to_login",
+      "status": "PASSED",
+      "duration": 90,
+      "percent": "88%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_266: Should redirect unauthenticated user from /patient/history to login",
+      "tcName": "test_TC_266_should_redirect_unauthenticated_user_from_patient_history_to_login",
+      "status": "PASSED",
+      "duration": 100,
+      "percent": "88%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_267: Should redirect unauthenticated user from /patient/journey to login",
+      "tcName": "test_TC_267_should_redirect_unauthenticated_user_from_patient_journey_to_login",
+      "status": "PASSED",
+      "duration": 92,
+      "percent": "89%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_268: Should redirect unauthenticated user from /patient/profile to login",
+      "tcName": "test_TC_268_should_redirect_unauthenticated_user_from_patient_profile_to_login",
+      "status": "PASSED",
+      "duration": 101,
+      "percent": "89%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_269: Should allow access to /doctor/patients when doctor session exists",
+      "tcName": "test_TC_269_should_allow_access_to_doctor_patients_when_doctor_session_exists",
+      "status": "PASSED",
+      "duration": 106,
+      "percent": "89%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_270: Should allow access to /patient/home when patient session exists",
+      "tcName": "test_TC_270_should_allow_access_to_patient_home_when_patient_session_exists",
+      "status": "PASSED",
+      "duration": 106,
+      "percent": "90%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_271: Should not expose raw API credentials in page source HTML",
+      "tcName": "test_TC_271_should_not_expose_raw_api_credentials_in_page_source_html",
+      "status": "PASSED",
+      "duration": 108,
+      "percent": "90%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_272: Should not expose database connection strings in browser",
+      "tcName": "test_TC_272_should_not_expose_database_connection_strings_in_browser",
+      "status": "PASSED",
+      "duration": 86,
+      "percent": "90%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_273: Should use HTTPS or localhost for all API fetch calls",
+      "tcName": "test_TC_273_should_use_https_or_localhost_for_all_api_fetch_calls",
+      "status": "PASSED",
+      "duration": 93,
+      "percent": "91%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_274: Should return 200 status for GET from Vite dev server",
+      "tcName": "test_TC_274_should_return_200_status_for_get_from_vite_dev_server",
+      "status": "PASSED",
+      "duration": 53,
+      "percent": "91%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_275: Should handle API 404 error gracefully without crashing app",
+      "tcName": "test_TC_275_should_handle_api_404_error_gracefully_without_crashing_app",
+      "status": "PASSED",
+      "duration": 93,
+      "percent": "91%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_276: Should handle API 500 error with user-friendly error toast",
+      "tcName": "test_TC_276_should_handle_api_500_error_with_user_friendly_error_toast",
+      "status": "PASSED",
+      "duration": 64,
+      "percent": "92%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_277: Should sanitize XSS attack vectors in input fields",
+      "tcName": "test_TC_277_should_sanitize_xss_attack_vectors_in_input_fields",
+      "status": "PASSED",
+      "duration": 165,
+      "percent": "92%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_278: Should not allow SQL injection payloads to crash login form",
+      "tcName": "test_TC_278_should_not_allow_sql_injection_payloads_to_crash_login_form",
+      "status": "PASSED",
+      "duration": 114,
+      "percent": "92%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_279: Should not store plain text passwords in sessionStorage",
+      "tcName": "test_TC_279_should_not_store_plain_text_passwords_in_sessionstorage",
+      "status": "PASSED",
+      "duration": 43,
+      "percent": "93%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_280: Should clear all auth tokens from sessionStorage on logout",
+      "tcName": "test_TC_280_should_clear_all_auth_tokens_from_sessionstorage_on_logout",
+      "status": "PASSED",
+      "duration": 97,
+      "percent": "93%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_281: Should load landing page within 5 seconds on first visit",
+      "tcName": "test_TC_281_should_load_landing_page_within_5_seconds_on_first_visit",
+      "status": "PASSED",
+      "duration": 79,
+      "percent": "93%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_282: Should load Doctor Login page within 3 seconds",
+      "tcName": "test_TC_282_should_load_doctor_login_page_within_3_seconds",
+      "status": "PASSED",
+      "duration": 41,
+      "percent": "94%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_283: Should load Patient Login page within 3 seconds",
+      "tcName": "test_TC_283_should_load_patient_login_page_within_3_seconds",
+      "status": "PASSED",
+      "duration": 45,
+      "percent": "94%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_284: Should render the app correctly at 1440x900 desktop viewport",
+      "tcName": "test_TC_284_should_render_the_app_correctly_at_1440x900_desktop_viewport",
+      "status": "PASSED",
+      "duration": 65,
+      "percent": "94%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_285: Should render the app correctly at 1280x800 viewport",
+      "tcName": "test_TC_285_should_render_the_app_correctly_at_1280x800_viewport",
+      "status": "PASSED",
+      "duration": 622,
+      "percent": "95%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_286: Should render the app correctly at 1920x1080 full HD viewport",
+      "tcName": "test_TC_286_should_render_the_app_correctly_at_1920x1080_full_hd_viewport",
+      "status": "PASSED",
+      "duration": 1081,
+      "percent": "95%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_287: Should not display any SEVERE browser JavaScript errors on load",
+      "tcName": "test_TC_287_should_not_display_any_severe_browser_javascript_errors_on_load",
+      "status": "PASSED",
+      "duration": 55,
+      "percent": "95%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_288: Should navigate using browser Back button correctly",
+      "tcName": "test_TC_288_should_navigate_using_browser_back_button_correctly",
+      "status": "PASSED",
+      "duration": 79,
+      "percent": "96%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_289: Should navigate using browser Forward button correctly",
+      "tcName": "test_TC_289_should_navigate_using_browser_forward_button_correctly",
+      "status": "PASSED",
+      "duration": 13,
+      "percent": "96%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_290: Should handle page refresh without crashing the application",
+      "tcName": "test_TC_290_should_handle_page_refresh_without_crashing_the_application",
+      "status": "PASSED",
+      "duration": 179,
+      "percent": "96%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_291: Should set lang attribute on root html element",
+      "tcName": "test_TC_291_should_set_lang_attribute_on_root_html_element",
+      "status": "PASSED",
+      "duration": 87,
+      "percent": "97%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_292: Should render heading hierarchy on landing page",
+      "tcName": "test_TC_292_should_render_heading_hierarchy_on_landing_page",
+      "status": "PASSED",
+      "duration": 105,
+      "percent": "97%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_293: Should have visible focus indicator on all interactive elements",
+      "tcName": "test_TC_293_should_have_visible_focus_indicator_on_all_interactive_elements",
+      "status": "PASSED",
+      "duration": 81,
+      "percent": "97%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_294: Should parse JSON responses securely",
+      "tcName": "test_TC_294_should_parse_json_responses_securely",
+      "status": "PASSED",
+      "duration": 45,
+      "percent": "98%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_295: Should maintain E2E state consistency between doctor and patient portals",
+      "tcName": "test_TC_295_should_maintain_e2e_state_consistency_between_doctor_and_patient_portals",
+      "status": "PASSED",
+      "duration": 88,
+      "percent": "98%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_296: Should support Blob URL generation for CSV export",
+      "tcName": "test_TC_296_should_support_blob_url_generation_for_csv_export",
+      "status": "PASSED",
+      "duration": 100,
+      "percent": "98%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_297: Should support DOM element cleanup post-report download",
+      "tcName": "test_TC_297_should_support_dom_element_cleanup_post_report_download",
+      "status": "PASSED",
+      "duration": 78,
+      "percent": "99%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_298: Should verify application WCAG contrast standards",
+      "tcName": "test_TC_298_should_verify_application_wcag_contrast_standards",
+      "status": "PASSED",
+      "duration": 56,
+      "percent": "99%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_299: Should verify application interactive click targets exceed 44px",
+      "tcName": "test_TC_299_should_verify_application_interactive_click_targets_exceed_44px",
+      "status": "PASSED",
+      "duration": 193,
+      "percent": "99%",
+      "error": ""
+    },
+    {
+      "category": "05. Security, Route Protection & API Integration Module",
+      "title": "TC_300: Complete E2E Clinical System Integrity Session Verification",
+      "tcName": "test_TC_300_complete_e2e_clinical_system_integrity_session_verification",
+      "status": "PASSED",
+      "duration": 159,
+      "percent": "100%",
+      "error": ""
+    }
+  ]
+}

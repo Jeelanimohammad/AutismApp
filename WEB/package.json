@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test:e2e": "npx mocha 'tests/**/*.test.js' --reporter tests/helpers/csvReporter.cjs --timeout 30000"
+    "test:e2e": "npx mocha --require tests/helpers/rootHooks.js 'tests/*.test.js' --reporter tests/helpers/csvReporter.cjs --timeout 30000"
   },
   "dependencies": {
     "lucide-react": "^1.16.0",
