@@ -21,7 +21,8 @@ const greenBlocks = Math.round(passRate / 10);
 const redBlocks = 10 - greenBlocks;
 const progressBar = '🟩'.repeat(greenBlocks) + '🟥'.repeat(redBlocks) + ` **${data.passPercentage}**`;
 
-let markdown = `## 🧪 Integrated Test Execution Summary (E2E, Unit, Load, Security, Validation, Mobile)\n\n`;
+const testType = process.env.TEST_TYPE || 'Selenium Web E2E';
+let markdown = `## 🧪 ${testType} Test Execution Summary\n\n`;
 
 markdown += `| Total Testcases | Passed | Failed | Pass Percentage |\n`;
 markdown += `| :---: | :---: | :---: | :---: |\n`;

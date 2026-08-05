@@ -1,4 +1,4 @@
-name: Selenium E2E Tests
+name: Unit Tests
 
 on:
   push:
@@ -8,8 +8,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  selenium-e2e-tests:
-    name: Run Selenium Web E2E Tests
+  unit-tests:
+    name: Run React Helper & Validator Unit Tests
     runs-on: ubuntu-latest
 
     steps:
@@ -34,19 +34,19 @@ jobs:
           npm run dev &
           npx wait-on http://localhost:5174 --timeout 30000
 
-      - name: Run Selenium E2E Tests
+      - name: Run Unit Tests
         env:
           HEADLESS: 'true'
           CI: 'true'
-          TEST_TYPE: 'Selenium Web E2E'
+          TEST_TYPE: 'Unit'
         run: |
           cd WEB
-          npm run test:e2e || true
+          npm run test:unit || true
 
       - name: Generate Job Summary & Pass Percentage Report
         if: always()
         env:
-          TEST_TYPE: 'Selenium Web E2E'
+          TEST_TYPE: 'Unit'
         run: |
           cd WEB
           node tests/helpers/generateSummary.cjs
@@ -55,7 +55,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: selenium-test-reports
+          name: unit-test-reports
           path: |
             WEB/tests_report.csv
             WEB/tests_summary.json
