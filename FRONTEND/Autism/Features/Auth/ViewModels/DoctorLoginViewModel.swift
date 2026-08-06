@@ -13,21 +13,20 @@ class DoctorLoginViewModel: ObservableObject {
     @Published var passwordColor = Color.red
     
     func validatePassword() {
-        let passwordTest = NSPredicate(format: "SELF MATCHES %@",
-            "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$&*]).{8,}$")
         if password.isEmpty {
             passwordMessage = ""
-        } else if !passwordTest.evaluate(with: password) {
-            passwordMessage = "Weak password: 8+ chars, uppercase, number & special"
+        } else if password.count < 4 {
+            passwordMessage = "Password must be at least 4 characters"
             passwordColor = .red
         } else {
-            passwordMessage = "Strong password"
+            passwordMessage = ""
             passwordColor = .green
         }
     }
     
+    // Login only needs non-empty credentials — server handles authentication
     var isLoginEnabled: Bool {
-        return !email.isEmpty && passwordMessage == "Strong password" && !isLoading
+        return !email.isEmpty && !password.isEmpty && !isLoading
     }
     
     func login() {

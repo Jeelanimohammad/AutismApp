@@ -12,7 +12,7 @@ export default function ForgotPassword() {
   const [success, setSuccess] = useState('');
   const [showPass, setShowPass] = useState(false);
 
-  const valid = email.includes('@') && newPassword.length >= 6;
+  const valid = email.includes('@') && newPassword.length >= 4;
 
   async function handleReset(e) {
     e.preventDefault();
@@ -70,7 +70,7 @@ export default function ForgotPassword() {
               <label className="input-label">New Password</label>
               <div className="input-field">
                 <Lock size={18} className="input-icon" />
-                <input type={showPass ? 'text' : 'password'} placeholder="At least 6 characters" value={newPassword} onChange={e => setNewPassword(e.target.value)} />
+                <input type={showPass ? 'text' : 'password'} placeholder="At least 4 characters" value={newPassword} onChange={e => setNewPassword(e.target.value)} />
                 <button type="button" onClick={() => setShowPass(v => !v)}
                   style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 4, color: 'var(--text-muted)', display: 'flex', alignItems: 'center' }}>
                   {showPass ? <EyeOff size={17} /> : <Eye size={17} />}

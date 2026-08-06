@@ -38,7 +38,6 @@ $sex = trim($data['sex'] ?? '');
 $phone = trim($data['phone'] ?? '');
 $email = trim($data['email'] ?? '');
 $password = trim($data['password'] ?? '');
-$profile_image = $data['profile_image'] ?? '';
 
 // Validate fields
 $missingFields = [];
@@ -93,32 +92,14 @@ if ($resultPhone->num_rows > 0) {
 }
 $checkPhone->close();
 
-// Handle profile image upload
-$full_url = "";
-$saved_image_path = null;
-if ($profile_image && strpos($profile_image, 'data:image') !== false) {
-    $parts = explode(',', $profile_image);
-    $image_data = base64_decode(end($parts));
-    $filename = 'profile_' . $patient_id . '_' . time() . '.png';
-    $path = 'uploads/' . $filename;
-    
-    if (!file_exists('uploads')) {
-        mkdir('uploads', 0777, true);
-    }
-    
-    if (file_put_contents($path, $image_data)) {
-        $saved_image_path = $path; // Save only the relative path 'uploads/filename.png'
-    }
-}
-
 // Convert DOB format from DD/MM/YYYY to YYYY-MM-DD
 $dobParts = explode('/', $dob);
 $dob_mysql = count($dobParts) === 3 ? $dobParts[2] . '-' . $dobParts[1] . '-' . $dobParts[0] : $dob;
 
 // Insert into DB
-$stmt = $conn->prepare("INSERT INTO patients (patient_id, name, age, dob, sex, phone, email, password, profile_image, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())");
+$stmt = $conn->prepare("INSERT INTO patients (patient_id, name, age, dob, sex, phone, email, password, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, NOW())");
 if ($stmt) {
-    $stmt->bind_param("ssissssss", $patient_id, $name, $age, $dob_mysql, $sex, $phone, $email, $password, $saved_image_path);
+    $stmt->bind_param("ssisssss", $patient_id, $name, $age, $dob_mysql, $sex, $phone, $email, $password);
     if ($stmt->execute()) {
         $response = [
             "success" => true,

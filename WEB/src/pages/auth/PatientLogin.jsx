@@ -68,7 +68,12 @@ export default function PatientLogin() {
             </div>
 
             <div className="input-group">
-              <label className="input-label">Password</label>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
+                <label className="input-label" style={{ marginBottom: 0 }}>Password</label>
+                <Link to="/forgot-password" style={{ fontSize: 13, fontWeight: 700, color: 'var(--cyan)', textDecoration: 'none' }}>
+                  Forgot password?
+                </Link>
+              </div>
               <div className="input-field">
                 <Lock size={18} className="input-icon" style={{ color: 'var(--cyan)' }} />
                 <input type={showPass ? 'text' : 'password'} placeholder="••••••••" value={password} onChange={e => setPassword(e.target.value)} required />

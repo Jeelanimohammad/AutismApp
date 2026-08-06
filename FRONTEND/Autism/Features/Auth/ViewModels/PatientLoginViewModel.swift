@@ -9,21 +9,12 @@ class PatientLoginViewModel: ObservableObject {
     @Published var showError = false
     @Published var navigateToDashboard = false
     
-    var passwordValidation: [String] {
-        var messages: [String] = []
-        if password.count < 8 { messages.append("• Minimum 8 characters") }
-        if password.range(of: "[A-Z]", options: .regularExpression) == nil { messages.append("• At least 1 uppercase letter") }
-        if password.range(of: "[a-z]", options: .regularExpression) == nil { messages.append("• At least 1 lowercase letter") }
-        if password.range(of: "[0-9]", options: .regularExpression) == nil { messages.append("• At least 1 number") }
-        if password.range(of: "[^A-Za-z0-9]", options: .regularExpression) == nil { messages.append("• At least 1 special character") }
-        return messages
-    }
-    
-    var isPasswordValid: Bool { passwordValidation.isEmpty }
 
+    // Login only needs non-empty credentials — server handles authentication
     var isLoginEnabled: Bool {
-        return !patientID.isEmpty && isPasswordValid && !isLoading
+        return !patientID.isEmpty && !password.isEmpty && !isLoading
     }
+
     
     func login() {
         isLoading = true

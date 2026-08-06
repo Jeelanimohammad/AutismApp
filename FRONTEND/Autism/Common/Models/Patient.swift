@@ -12,11 +12,13 @@ struct Patient: Codable, Identifiable {
     let profile_image: String?
     let created_at: String?
     let pending_reviews: Int?
+    let reviewed_count: Int?
+    let has_advice: Int?
     let responses: [PatientSymptomResponse]?
     
     enum CodingKeys: String, CodingKey {
-        case patient_db_id = "id" // Use "id" from PHP if available
-        case patient_id, name, age, dob, sex, phone, profile_image, created_at, pending_reviews, responses
+        case patient_db_id = "id"
+        case patient_id, name, age, dob, sex, phone, profile_image, created_at, pending_reviews, reviewed_count, has_advice, responses
     }
 
     init(from decoder: Decoder) throws {
@@ -52,6 +54,22 @@ struct Patient: Codable, Identifiable {
             pending_reviews = Int(pendingStr)
         } else {
             pending_reviews = nil
+        }
+
+        if let revInt = try? container.decodeIfPresent(Int.self, forKey: .reviewed_count) {
+            reviewed_count = revInt
+        } else if let revStr = try? container.decodeIfPresent(String.self, forKey: .reviewed_count) {
+            reviewed_count = Int(revStr)
+        } else {
+            reviewed_count = nil
+        }
+
+        if let adviceInt = try? container.decodeIfPresent(Int.self, forKey: .has_advice) {
+            has_advice = adviceInt
+        } else if let adviceStr = try? container.decodeIfPresent(String.self, forKey: .has_advice) {
+            has_advice = Int(adviceStr)
+        } else {
+            has_advice = nil
         }
 
         responses = try container.decodeIfPresent([PatientSymptomResponse].self, forKey: .responses)

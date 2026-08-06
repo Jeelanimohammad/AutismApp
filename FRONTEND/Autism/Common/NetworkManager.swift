@@ -3,8 +3,11 @@ import Foundation
 class NetworkManager {
     static let shared = NetworkManager()
     
-    // Change this to your server IP for testing on real device
+    #if targetEnvironment(simulator)
+    let baseURL = "http://127.0.0.1/autism"
+    #else
     let baseURL = "http://172.25.85.139/autism"
+    #endif
     
     private init() {}
     

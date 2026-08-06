@@ -299,14 +299,21 @@ export default function NewAssessment() {
               background: 'var(--bg-subtle)', border: '1px solid var(--border-light)',
               display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative'
             }}>
-              {current?.image_url ? (
+              {current ? (
                 <img
-                  src={api.resolveImageUrl(current.image_url)}
+                  src={api.resolveImageUrl(current.image_url) || `/symptoms/child${current.id}.png`}
                   alt={current.symptom_name}
                   style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                   onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.nextSibling.style.display = 'flex';
+                    const fallbackSrc = `${window.location.origin}/symptoms/child${current.id}.png`;
+                    if (e.target.src !== fallbackSrc) {
+                      e.target.src = fallbackSrc;
+                    } else {
+                      e.target.style.display = 'none';
+                      if (e.target.nextSibling) {
+                        e.target.nextSibling.style.display = 'flex';
+                      }
+                    }
                   }}
                 />
               ) : null}

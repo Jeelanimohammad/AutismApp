@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Stethoscope, Users, Brain, HeartPulse, ArrowRight, Shield } from 'lucide-react';
+import { Stethoscope, Users, Brain, ArrowRight, Shield } from 'lucide-react';
 
 export default function RoleSelection() {
   const navigate = useNavigate();
@@ -8,39 +8,53 @@ export default function RoleSelection() {
     <div className="page-center" style={{ flexDirection: 'column', gap: 0 }}>
       {/* HERO */}
       <div className="animate-fade" style={{ textAlign: 'center', marginBottom: 56 }}>
-        {/* Logo mark */}
-        <div style={{
-          width: 96, height: 96, borderRadius: 28, margin: '0 auto 24px',
-          background: 'linear-gradient(135deg, #1D4ED8, #16A34A)',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          boxShadow: '0 0 0 16px rgba(29,78,216,0.1), 0 12px 40px rgba(29,78,216,0.45)',
-          position: 'relative',
-        }}>
-          <Brain size={44} color="white" />
-          {/* Pulse ring */}
+        {/* Logo mark - Round shape with blinking and pulsing animation */}
+        <div style={{ position: 'relative', width: 140, height: 140, margin: '0 auto 24px' }}>
+          {/* Outer glowing pulsing aura */}
           <div style={{
-            position: 'absolute', inset: -12,
-            borderRadius: 40,
-            border: '1px solid rgba(29,78,216,0.4)',
-            animation: 'pulse 2.5s ease-in-out infinite',
+            position: 'absolute',
+            inset: -10,
+            borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(29,78,216,0.35), rgba(22,163,74,0.25), transparent)',
+            border: '2px solid rgba(29,78,216,0.4)',
+            animation: 'pulseGlow 2.2s ease-in-out infinite alternate',
+            pointerEvents: 'none',
           }} />
+          
+          {/* Circular logo container with blinking effect */}
+          <div style={{
+            width: '100%',
+            height: '100%',
+            borderRadius: '50%',
+            background: '#ffffff',
+            padding: 12,
+            display: 'flex',
+            alignItems: 'center',
+            justify: 'center',
+            position: 'relative',
+            zIndex: 1,
+            overflow: 'hidden',
+            boxShadow: '0 12px 36px rgba(0,0,0,0.15), 0 0 0 4px rgba(255,255,255,0.9)',
+            animation: 'logoBlink 2.5s ease-in-out infinite'
+          }}>
+            <img 
+              src="/app-logo.png" 
+              alt="Autism App Logo" 
+              style={{ 
+                width: '100%', 
+                height: '100%', 
+                objectFit: 'contain',
+              }} 
+            />
+          </div>
         </div>
 
-        <h1 style={{
-          fontSize: 52, fontWeight: 900, lineHeight: 1.1,
-          marginBottom: 12, letterSpacing: -1,
-        }}>
-          <span className="gradient-text">Autism</span>
-        </h1>
-        <p style={{ fontSize: 18, color: 'var(--text-secondary)', fontWeight: 500, marginBottom: 20, maxWidth: 380, margin: '0 auto 20px' }}>
+        <p style={{ fontSize: 18, color: 'var(--text-secondary)', fontWeight: 500, marginBottom: 20, maxWidth: 380, margin: '12px auto 20px' }}>
           Early Autism Screening &amp; Clinical Assessment Platform
         </p>
         <div style={{ display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap' }}>
           <span className="badge badge-purple" style={{ fontSize: 12, padding: '6px 14px' }}>
             <Shield size={12} /> Saveetha Network
-          </span>
-          <span className="badge badge-cyan" style={{ fontSize: 12, padding: '6px 14px' }}>
-            <HeartPulse size={12} /> AI-Powered Screening
           </span>
         </div>
       </div>

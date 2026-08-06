@@ -11,19 +11,19 @@ struct Localization {
             .marathi: "ऑटिझम केअर"
         ],
         "total_patients": [
-            .english: "Total Patients",
+            .english: "TOTAL PATIENTS",
             .telugu: "మొత్తం రోగులు",
             .hindi: "कुल मरीज"
         ],
         "advice_given": [
-            .english: "Advice Given",
-            .telugu: "ఇచ్చిన సలహా",
-            .hindi: "दी गई सलाह"
+            .english: "ADVISED",
+            .telugu: "సమీక్షించబడింది",
+            .hindi: "समीक्षित"
         ],
         "pending_review": [
-            .english: "Pending Review",
+            .english: "PENDING REVIEW",
             .telugu: "సమీక్ష పెండింగ్‌లో ఉంది",
-            .hindi: "समीक्षा लंबित"
+            .hindi: "సమీక్ష కావలసివుంది"
         ],
         "my_patients": [
             .english: "MY PATIENTS",
@@ -195,6 +195,14 @@ struct Localization {
             .tamil: "நோயாளி போர்டல்",
             .kannada: "ರೋಗಿಗಳ ಪೋರ್ಟಲ್",
             .marathi: "पेशंट पोर्टल"
+        ],
+        "doctor_portal": [
+            .english: "Doctor Portal",
+            .telugu: "డాక్టర్ పోర్టల్",
+            .hindi: "डॉक्टर पोर्टल",
+            .tamil: "மருத்துவர் போர்டல்",
+            .kannada: "ವೈದ್ಯರ ಪೋರ್ಟಲ್",
+            .marathi: "डॉक्टर पोर्टल"
         ],
         "continue_as_patient": [
             .english: "Continue as Patient",

@@ -50,7 +50,7 @@ if (!$conn || $conn->connect_error) {
 }
 
 // Fetch patient record
-$stmt = $conn->prepare("SELECT id, patient_id, name, age, password, profile_image FROM patients WHERE patient_id = ? LIMIT 1");
+$stmt = $conn->prepare("SELECT id, patient_id, name, age, dob, sex, phone, email, profile_image, password FROM patients WHERE patient_id = ? LIMIT 1");
 if (!$stmt) {
     $response["message"] = "Error preparing statement: " . $conn->error;
     ob_end_clean();
@@ -72,6 +72,10 @@ if ($result->num_rows > 0) {
             "patient_id" => $row['patient_id'],
             "name" => $row['name'],
             "age" => (int)$row['age'],
+            "dob" => $row['dob'],
+            "sex" => $row['sex'],
+            "phone" => $row['phone'],
+            "email" => $row['email'],
             "profile_image" => $row['profile_image']
         ];
     } else {

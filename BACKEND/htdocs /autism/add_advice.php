@@ -15,21 +15,33 @@ include "config.php";
 $raw = file_get_contents("php://input");
 $data = json_decode($raw, true);
 
-/* DEBUG: LOG INPUT */
-file_put_contents("advice_debug.txt", $raw . PHP_EOL, FILE_APPEND);
+if ($data === null) {
+    echo json_encode([
+        "success" => false,
+        "message" => "Invalid JSON received. Raw: " . $raw . " Error: " . json_last_error_msg()
+    ]);
+    exit;
+}
+
+if (empty($data['patient_id'])) {
+    echo json_encode([
+        "success" => false,
+        "message" => "Patient ID is missing. Raw: " . $raw
+    ]);
+    exit;
+}
 
 /* READ FIELDS */
-$patient_id  = $data['patient_id']  ?? '';
+$patient_id  = $data['patient_id'];
 $doctor_name = $data['doctor_name'] ?? '';
-$doctor_id   = $data['doctor_id']   ?? '';
 $advice_text = $data['advice_text'] ?? '';
 
 $assessment_id = $data['assessment_id'] ?? null;
 
 /* INSERT */
 $stmt = $conn->prepare(
-    "INSERT INTO doctor_advice (patient_id, doctor_name, doctor_id, advice_text, assessment_id)
-     VALUES (?, ?, ?, ?, ?)"
+    "INSERT INTO doctor_advice (patient_id, doctor_name, advice_text, assessment_id)
+     VALUES (?, ?, ?, ?)"
 );
 
 if (!$stmt) {
@@ -40,7 +52,7 @@ if (!$stmt) {
     exit;
 }
 
-$stmt->bind_param("ssssi", $patient_id, $doctor_name, $doctor_id, $advice_text, $assessment_id);
+$stmt->bind_param("sssi", $patient_id, $doctor_name, $advice_text, $assessment_id);
 
 if ($stmt->execute()) {
     echo json_encode([

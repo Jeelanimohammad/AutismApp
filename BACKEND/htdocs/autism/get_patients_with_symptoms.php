@@ -39,7 +39,12 @@ function getSymptomDisplayName($symptomId) {
     return $symptomId; // Return original if not found
 }
 
-$sql = "SELECT p.id, p.patient_id, p.name, p.age, p.dob, p.sex, p.phone 
+$sql = "SELECT p.id, p.patient_id, p.name, p.age, p.dob, p.sex, p.phone,
+        (SELECT COUNT(*) 
+         FROM assessments a 
+         LEFT JOIN doctor_advice da ON a.id = da.assessment_id 
+         WHERE (a.patient_id = p.patient_id OR a.patient_id = CAST(p.id AS CHAR)) AND da.id IS NULL
+        ) as pending_reviews
         FROM patients p 
         ORDER BY p.created_at DESC";
 $result = $conn->query($sql);
@@ -54,10 +59,11 @@ if ($result && $result->num_rows > 0) {
         $stmt = $conn->prepare("
             SELECT symptom_name, response, conclusion 
             FROM symptom_responses 
-            WHERE patient_id = ?
+            WHERE patient_id = ? OR patient_id = ?
             ORDER BY id ASC
         ");
-        $stmt->bind_param("i", $patient_pk_id);
+        $patient_id_str = (string)$row['patient_id'];
+        $stmt->bind_param("ss", $patient_pk_id, $patient_id_str);
         $stmt->execute();
         $resResult = $stmt->get_result();
 
@@ -72,12 +78,11 @@ if ($result && $result->num_rows > 0) {
                 
                 $responsesArray[] = [
                     'symptom_name' => $symptomId,
-                    'symptom_display_name' => getSymptomDisplayName($symptomId), // Optional: for better API
+                    'symptom_display_name' => getSymptomDisplayName($symptomId),
                     'response' => $response,
                     'conclusion' => $r['conclusion'] ?? ''
                 ];
 
-                // Count Yes responses (case-insensitive)
                 if (strcasecmp($response, 'yes') === 0) {
                     $yesCount++;
                 }
@@ -86,30 +91,62 @@ if ($result && $result->num_rows > 0) {
         }
         $stmt->close();
 
-        // Generate final result based on yes count
-        // If 1 or more "Yes" responses, flag for further testing
+        // Count unadvised assessments
+        $p_id_str = (string)$row['patient_id'];
+        $p_db_id  = (string)$row['id'];
+
+        $asmStmt = $conn->prepare("
+            SELECT COUNT(*) as unadvised_cnt 
+            FROM assessments a 
+            LEFT JOIN doctor_advice da ON a.id = da.assessment_id 
+            WHERE (a.patient_id = ? OR a.patient_id = ?) AND da.id IS NULL
+        ");
+        $asmStmt->bind_param("ss", $p_id_str, $p_db_id);
+        $asmStmt->execute();
+        $asmRes = $asmStmt->get_result()->fetch_assoc();
+        $unadvisedCount = (int)($asmRes['unadvised_cnt'] ?? 0);
+        $asmStmt->close();
+
+        $advStmt = $conn->prepare("SELECT COUNT(*) as adv_cnt FROM doctor_advice WHERE patient_id = ? OR patient_id = ?");
+        $advStmt->bind_param("ss", $p_id_str, $p_db_id);
+        $advStmt->execute();
+        $advRes = $advStmt->get_result()->fetch_assoc();
+        $advCount = (int)($advRes['adv_cnt'] ?? 0);
+        $advStmt->close();
+
+        if ($unadvisedCount > 0) {
+            $pendingCount = $unadvisedCount;
+            $hasAdvice = 0; // Patient is NOT fully reviewed until ALL reports have been advised!
+        } else if ($advCount > 0) {
+            $pendingCount = 0;
+            $hasAdvice = 1; // Fully reviewed!
+        } else {
+            $pendingCount = ($totalResponses > 0) ? 1 : 0;
+            $hasAdvice = 0;
+        }
+
         if ($yesCount >= 1) {
             $finalResult = "Your child needs further Diagnostic Tests for Autism.";
         } else {
             $finalResult = "Your Child has no signs of Autism at present.";
         }
 
-        // Only include patients with responses
-        if ($totalResponses > 0) {
-            $patients[] = [
-                "id" => $row['id'],
-                "patient_id" => $row['patient_id'],
-                "name" => $row['name'],
-                "age" => $row['age'],
-                "dob" => $row['dob'],
-                "sex" => $row['sex'],
-                "phone" => $row['phone'],
-                "responses" => $responsesArray,
-                "final_conclusion" => $finalResult,
-                "yes_count" => $yesCount,
-                "total_responses" => $totalResponses
-            ];
-        }
+        $patients[] = [
+            "id" => $row['id'],
+            "patient_id" => $row['patient_id'],
+            "name" => $row['name'],
+            "age" => $row['age'],
+            "dob" => $row['dob'],
+            "sex" => $row['sex'],
+            "phone" => $row['phone'],
+            "pending_reviews" => $pendingCount,
+            "reviewed_count" => $advCount,
+            "has_advice" => $hasAdvice,
+            "responses" => $responsesArray,
+            "final_conclusion" => $finalResult,
+            "yes_count" => $yesCount,
+            "total_responses" => $totalResponses
+        ];
     }
 }
 

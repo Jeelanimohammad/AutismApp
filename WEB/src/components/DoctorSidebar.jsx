@@ -24,14 +24,7 @@ export default function DoctorSidebar() {
       {/* Brand */}
       <div style={{ padding: '20px 20px 16px', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
-          <div style={{
-            width: 32, height: 32, borderRadius: 8,
-            background: 'linear-gradient(135deg, #1D4ED8, #2563EB)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            boxShadow: '0 4px 12px rgba(29,78,216,0.3)'
-          }}>
-            <Stethoscope size={17} color="white" />
-          </div>
+          <img src="/app-logo.png" alt="Autism Logo" style={{ width: 36, height: 36, objectFit: 'contain', flexShrink: 0 }} />
           <div className="sidebar-brand-text" style={{ fontSize: 18, fontWeight: 900, color: 'var(--text-primary)', letterSpacing: -0.3 }}>Autism</div>
           <div className="sidebar-brand-text" style={{ marginLeft: 'auto' }}>
             <Activity size={14} color="var(--cyan)" />

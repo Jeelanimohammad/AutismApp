@@ -115,23 +115,29 @@ export default function PatientDetails() {
   <meta charset="utf-8">
   <title>Clinical Analysis Report - ${patientName}</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #f8fafc; padding: 40px; margin: 0; }
-    .card { max-width: 700px; margin: 0 auto; background: #1e293b; border-radius: 16px; border: 1px solid #334155; padding: 32px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3); }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a !important; color: #f8fafc !important; padding: 30px; margin: 0; }
+    .card { max-width: 700px; margin: 0 auto; background: #1e293b !important; border-radius: 16px; border: 1px solid #334155 !important; padding: 32px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3); }
     .header { border-bottom: 1px solid #334155; padding-bottom: 20px; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center; }
-    .logo { color: #06b6d4; font-size: 24px; font-weight: 900; letter-spacing: -0.5px; }
-    .sub { color: #94a3b8; font-size: 13px; margin-top: 4px; }
+    .logo { color: #06b6d4 !important; font-size: 24px; font-weight: 900; letter-spacing: -0.5px; }
+    .sub { color: #94a3b8 !important; font-size: 13px; margin-top: 4px; }
     .print-btn { background: #06b6d4; color: #0f172a; border: none; padding: 10px 18px; border-radius: 8px; font-weight: 800; cursor: pointer; font-size: 13px; transition: all 0.2s; }
     .print-btn:hover { background: #22d3ee; }
-    @media print { .print-btn { display: none; } body { background: #fff; color: #000; padding: 0; } .card { border: none; box-shadow: none; background: #fff; color: #000; } .info-grid, .advice-box { background: #f1f5f9 !important; color: #000 !important; } .info-val { color: #000 !important; } }
-    .section-title { font-size: 14px; font-weight: 800; text-transform: uppercase; color: #06b6d4; letter-spacing: 1px; margin: 24px 0 12px 0; }
-    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 14px; background: rgba(15,23,42,0.6); padding: 16px; border-radius: 8px; }
-    .info-label { color: #94a3b8; }
-    .info-val { color: #f8fafc; font-weight: 700; }
-    .badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 800; background: rgba(6,182,212,0.2); color: #06b6d4; }
+    @media print {
+      .print-btn { display: none !important; }
+      body { background: #0f172a !important; color: #f8fafc !important; padding: 20px; }
+      .card { background: #1e293b !important; border: 1px solid #334155 !important; color: #f8fafc !important; }
+    }
+    .section-title { font-size: 14px; font-weight: 800; text-transform: uppercase; color: #06b6d4 !important; letter-spacing: 1px; margin: 24px 0 12px 0; }
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 14px; background: rgba(15,23,42,0.8) !important; padding: 16px; border-radius: 8px; border: 1px solid #334155; }
+    .info-label { color: #94a3b8 !important; }
+    .info-val { color: #f8fafc !important; font-weight: 700; }
+    .badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 800; background: rgba(6,182,212,0.2) !important; color: #06b6d4 !important; border: 1px solid rgba(6,182,212,0.4); }
     table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; }
-    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #334155; }
-    th { color: #94a3b8; font-size: 11px; text-transform: uppercase; }
-    .advice-box { background: rgba(15,23,42,0.6); border-left: 3px solid #06b6d4; padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 10px; font-size: 14px; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #334155 !important; }
+    th { color: #94a3b8 !important; font-size: 11px; text-transform: uppercase; }
+    td { color: #f8fafc !important; }
+    .advice-box { background: rgba(15,23,42,0.8) !important; border-left: 3px solid #06b6d4 !important; padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 10px; font-size: 14px; color: #f8fafc !important; }
   </style>
 </head>
 <body>

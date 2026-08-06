@@ -27,9 +27,10 @@ export default function DoctorAnalytics() {
   }, [doctor?.doctor_id]);
 
   const total = patients.length;
-  const withPending = patients.filter(p => p.pending_reviews > 0).length;
-  const reviewed = total - withPending;
-  const reviewRate = total > 0 ? Math.round((reviewed / total) * 100) : 0;
+  const totalPending = patients.reduce((acc, p) => acc + (parseInt(p.pending_reviews) || 0), 0);
+  const totalReviewed = patients.reduce((acc, p) => acc + (parseInt(p.reviewed_count) || 0), 0);
+  const reviewedFullyPatients = patients.filter(p => parseInt(p.has_advice) === 1 && (parseInt(p.pending_reviews) || 0) === 0).length;
+  const reviewRate = total > 0 ? Math.round((reviewedFullyPatients / total) * 100) : 0;
 
   // Gender distribution
   const genderData = (() => {
@@ -61,10 +62,10 @@ export default function DoctorAnalytics() {
     return brackets.map(b => ({ name: b.name, Patients: b.count }));
   })();
 
-  // Risk distribution (based on pending vs reviewed)
+  // Risk distribution (proportional split between pending reviews and reviewed reports)
   const riskData = [
-    { name: 'High Risk', value: withPending, color: '#EF4444' },
-    { name: 'Reviewed', value: reviewed, color: '#10B981' },
+    { name: 'High Risk', value: totalPending, color: '#EF4444' },
+    { name: 'Reviewed', value: totalReviewed, color: '#10B981' },
   ].filter(d => d.value > 0);
 
   const StatMini = ({ label, value, icon: Icon, color, sub }) => (
@@ -118,8 +119,8 @@ export default function DoctorAnalytics() {
       {/* KPI Strip */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16, marginBottom: 28 }}>
         <StatMini label="Total Patients" value={total} icon={Users} color="#3B82F6" />
-        <StatMini label="Pending Reviews" value={withPending} icon={Clock} color="#F59E0B" />
-        <StatMini label="Fully Reviewed" value={reviewed} icon={CheckCircle} color="#10B981" />
+        <StatMini label="Pending Reviews" value={totalPending} icon={Clock} color="#F59E0B" />
+        <StatMini label="Fully Reviewed" value={reviewedFullyPatients} icon={CheckCircle} color="#10B981" />
         <StatMini label="Review Rate" value={`${reviewRate}%`} icon={TrendingUp} color="#8B5CF6" />
       </div>
 
@@ -221,7 +222,7 @@ export default function DoctorAnalytics() {
       )}
 
       {/* Pending Patients Table */}
-      {withPending > 0 && (
+      {totalPending > 0 && (
         <div className="card" style={{ padding: 28 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>

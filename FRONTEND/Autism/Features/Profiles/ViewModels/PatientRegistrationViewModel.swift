@@ -22,17 +22,8 @@ class PatientRegistrationViewModel: ObservableObject {
         return components.year ?? 0
     }
     
-    var passwordValidation: [String] {
-        var messages: [String] = []
-        if password.count < 8 { messages.append("• Minimum 8 characters") }
-        if password.range(of: "[A-Z]", options: .regularExpression) == nil { messages.append("• At least 1 uppercase letter") }
-        if password.range(of: "[a-z]", options: .regularExpression) == nil { messages.append("• At least 1 lowercase letter") }
-        if password.range(of: "[0-9]", options: .regularExpression) == nil { messages.append("• At least 1 number") }
-        if password.range(of: "[^A-Za-z0-9]", options: .regularExpression) == nil { messages.append("• At least 1 special character") }
-        return messages
-    }
-    
-    var isPasswordValid: Bool { passwordValidation.isEmpty }
+    // Password must be at least 4 characters (matches web app and backend)
+    var isPasswordValid: Bool { password.count >= 4 }
     
     var isNameValid: Bool {
         let nameRegex = "^[a-zA-Z\\s]+$"
@@ -75,6 +66,7 @@ class PatientRegistrationViewModel: ObservableObject {
             showError = true
             return
         }
+
 
         isLoading = true
         

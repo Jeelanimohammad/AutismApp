@@ -15,6 +15,12 @@ struct DoctorDashboardView: View {
                     }
                     .environmentObject(LanguageManager.shared)
                     .transition(.asymmetric(insertion: .opacity.combined(with: .move(edge: .leading)), removal: .opacity))
+                } else if selectedTab == 1 {
+                    NavigationStack {
+                        DoctorAnalyticsView(selectedTab: $selectedTab)
+                    }
+                    .environmentObject(LanguageManager.shared)
+                    .transition(.opacity)
                 } else {
                     NavigationStack {
                         DoctorProfileView(isPresented: $isPresented, selectedTab: $selectedTab)

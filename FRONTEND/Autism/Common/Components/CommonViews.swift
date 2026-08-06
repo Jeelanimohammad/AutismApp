@@ -89,11 +89,7 @@ struct PasswordFieldWithValidation: View {
     
     var passwordValidation: [String] {
         var messages: [String] = []
-        if password.count < 8 { messages.append("• Minimum 8 characters") }
-        if password.range(of: "[A-Z]", options: .regularExpression) == nil { messages.append("• At least 1 uppercase letter") }
-        if password.range(of: "[a-z]", options: .regularExpression) == nil { messages.append("• At least 1 lowercase letter") }
-        if password.range(of: "[0-9]", options: .regularExpression) == nil { messages.append("• At least 1 number") }
-        if password.range(of: "[^A-Za-z0-9]", options: .regularExpression) == nil { messages.append("• At least 1 special character") }
+        if password.count < 4 { messages.append("• Minimum 4 characters") }
         return messages
     }
     

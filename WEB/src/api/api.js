@@ -61,7 +61,18 @@ export const api = {
   // Image helper
   resolveImageUrl: (imagePath) => {
     if (!imagePath) return null;
-    if (imagePath.toLowerCase().startsWith('http')) return imagePath;
-    return `${BASE_URL}/${imagePath}`;
+    let cleanPath = imagePath.trim();
+    if (cleanPath.toLowerCase().startsWith('http')) {
+      try {
+        const urlObj = new URL(cleanPath);
+        const baseUrlObj = new URL(BASE_URL);
+        urlObj.protocol = baseUrlObj.protocol;
+        urlObj.host = baseUrlObj.host;
+        return urlObj.toString();
+      } catch {
+        return cleanPath;
+      }
+    }
+    return `${BASE_URL}/${cleanPath.replace(/^\//, '')}`;
   },
 };

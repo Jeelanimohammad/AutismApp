@@ -2,21 +2,7 @@
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 
-// Database connection
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "autism";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    echo json_encode([
-        "success" => false,
-        "message" => "Database connection failed: " . $conn->connect_error
-    ]);
-    exit();
-}
+include 'config.php';
 
 $doctor_id = isset($_GET['doctor_id']) ? $_GET['doctor_id'] : '';
 

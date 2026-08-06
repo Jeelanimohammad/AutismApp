@@ -110,14 +110,6 @@ struct PatientDetailsView: View {
                         
                         VStack(alignment: .leading, spacing: 8) {
                             PremiumRegField(title: "ACCOUNT PASSWORD", placeholder: "Secure access code", text: $viewModel.password, icon: "key.fill", isSecure: true)
-                            
-                            if !viewModel.password.isEmpty && !viewModel.passwordValidation.isEmpty {
-                                Text(viewModel.passwordValidation.joined(separator: ", "))
-                                    .font(.system(size: 11, weight: .bold, design: .rounded))
-                                    .foregroundColor(.red)
-                                    .padding(.leading, 8)
-                                    .transition(.opacity)
-                            }
                         }
 
                         // Action Button

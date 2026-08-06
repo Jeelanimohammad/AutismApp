@@ -15,7 +15,7 @@ if (!$data) {
 }
 
 $email = trim($data['email'] ?? '');
-$new_password = trim($data['password'] ?? '');
+$new_password = trim($data['password'] ?? ($data['new_password'] ?? ''));
 
 if (empty($email) || empty($new_password)) {
     echo json_encode(["success" => false, "message" => "Email and new password are required"]);

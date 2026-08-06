@@ -3,6 +3,17 @@ header("Content-Type: application/json");
 include 'config.php';
 
 $queries = [
+    // Create doctor_advice table if it doesn't exist
+    "CREATE TABLE IF NOT EXISTS `doctor_advice` (
+        `id` int(11) NOT NULL AUTO_INCREMENT,
+        `assessment_id` int(11) DEFAULT NULL,
+        `patient_id` varchar(50) DEFAULT NULL,
+        `doctor_name` varchar(100) DEFAULT NULL,
+        `advice_text` text DEFAULT NULL,
+        `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+        PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;",
+
     // Create assessments table if it doesn't exist
     "CREATE TABLE IF NOT EXISTS `assessments` (
         `id` int(11) NOT NULL AUTO_INCREMENT,

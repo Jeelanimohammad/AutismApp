@@ -195,33 +195,51 @@ struct PatientsView: View {
 
     var body: some View {
         ZStack(alignment: .top) {
-            StandardBackground { EmptyView() }
-                .ignoresSafeArea()
+            LinearGradient(
+                colors: [Color.white, Color(hex: "F0F9FF"), Color(hex: "E0F2FE")],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .ignoresSafeArea()
 
             VStack(spacing: 0) {
                 // ── GREETING HEADER ──────────────────────────
-                VStack(alignment: .leading, spacing: 8) {
-                    HStack(spacing: 10) {
-                        Image(systemName: greetingIcon)
-                            .foregroundColor(.white.opacity(0.9))
-                            .font(.system(size: 18, weight: .bold))
-                        Text("\(greeting),")
-                            .font(.system(size: 18, weight: .semibold, design: .rounded))
-                            .foregroundColor(.white.opacity(0.9))
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("\(greeting), \("dr".localizedDoctor())\(doctorName.split(separator: " ").first ?? "Doctor")")
+                            .font(.system(size: 26, weight: .black, design: .rounded))
+                            .foregroundColor(Color(hex: "0F172A"))
+                        
+                        Text("Here is your clinical overview for today.")
+                            .font(.system(size: 13, weight: .medium, design: .rounded))
+                            .foregroundColor(Color(hex: "64748B"))
                     }
-                    Text("\("dr".localizedDoctor())\(doctorName.split(separator: " ").first ?? "Doctor")")
-                        .font(.system(size: 36, weight: .bold, design: .rounded))
+                    
+                    Spacer()
+                    
+                    Button(action: { showAddPatient = true }) {
+                        HStack(spacing: 6) {
+                            Image(systemName: "person.badge.plus")
+                                .font(.system(size: 13, weight: .bold))
+                            Text("Register Patient")
+                                .font(.system(size: 12, weight: .black, design: .rounded))
+                        }
                         .foregroundColor(.white)
+                        .padding(.horizontal, 14)
+                        .padding(.vertical, 10)
+                        .background(Color(hex: "10B981"))
+                        .cornerRadius(12)
+                        .shadow(color: Color(hex: "10B981").opacity(0.3), radius: 6, y: 3)
+                    }
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal, 28)
-                .padding(.top, 28)
+                .padding(.horizontal, 24)
+                .padding(.top, 16)
                 .padding(.bottom, 20)
 
                 // ── STAT CARDS ROW ────────────────────────────
-                let totalPatients   = viewModel.patients.count
-                let pendingPatients = viewModel.patients.filter { ($0.pending_reviews ?? 0) > 0 }.count
-                let advisedPatients = totalPatients - pendingPatients
+                let totalPatients        = viewModel.patients.count
+                let advisedPatients      = viewModel.patients.filter { ($0.has_advice ?? 0) > 0 && ($0.pending_reviews ?? 0) == 0 }.count
+                let pendingPatientsCount = viewModel.patients.filter { ($0.pending_reviews ?? 0) > 0 || ($0.has_advice ?? 0) == 0 }.count
 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 14) {
@@ -229,19 +247,19 @@ struct PatientsView: View {
                             icon: "person.3.fill",
                             value: "\(totalPatients)",
                             label: "total_patients".localizedDoctor(),
-                            gradient: [Color(hex: "3B82F6"), Color(hex: "60A5FA")]
+                            gradient: [Color(hex: "2563EB"), Color(hex: "3B82F6")]
                         )
                         DoctorStatCard(
-                            icon: "checkmark.seal.fill",
+                            icon: "waveform.path.ecg",
                             value: "\(advisedPatients)",
                             label: "advice_given".localizedDoctor(),
-                            gradient: [Color(hex: "10B981"), Color(hex: "34D399")]
+                            gradient: [Color(hex: "06B6D4"), Color(hex: "10B981")]
                         )
                         DoctorStatCard(
-                            icon: "clock.badge.exclamationmark.fill",
-                            value: "\(pendingPatients)",
+                            icon: "heart.fill",
+                            value: "\(pendingPatientsCount)",
                             label: "pending_review".localizedDoctor(),
-                            gradient: [Color(hex: "F59E0B"), Color(hex: "FBBF24")]
+                            gradient: [Color(hex: "EA580C"), Color(hex: "F59E0B")]
                         )
                     }
                     .padding(.horizontal, 24)
@@ -393,8 +411,10 @@ struct DoctorStatCard: View {
                 Text(value)
                     .font(.system(size: 28, weight: .bold, design: .rounded))
                     .foregroundColor(.white)
-                Text(label)
-                    .font(.system(size: 12, weight: .medium))
+                Text(label.uppercased())
+                    .font(.system(size: 11, weight: .bold, design: .rounded))
+                    .foregroundColor(.white.opacity(0.9))
+                    .tracking(0.8)
                     .foregroundColor(.white.opacity(0.85))
             }
         }
@@ -414,41 +434,63 @@ struct MinimalistPatientRow: View {
 
     var body: some View {
         HStack(spacing: 16) {
-            // Simple Initials Avatar
-            Text(String(patient.name.prefix(1)).uppercased())
-                .font(.system(size: 16, weight: .bold, design: .rounded))
-                .foregroundColor(Color(hex: "3B82F6"))
-                .frame(width: 44, height: 44)
-                .background(Color(hex: "3B82F6").opacity(0.1))
-                .clipShape(Circle())
-            
-            VStack(alignment: .leading, spacing: 2) {
-                Text(patient.name.capitalized)
-                    .font(.system(size: 16, weight: .semibold))
-                    .foregroundColor(Color(hex: "1E293B"))
+            // Teal-blue Gradient Avatar Circle
+            ZStack {
+                Circle()
+                    .fill(
+                        LinearGradient(
+                            colors: [Color(hex: "0D9488"), Color(hex: "0284C7")],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        )
+                    )
+                    .frame(width: 44, height: 44)
                 
-                Text("#\(patient.patient_id.suffix(4))")
-                    .font(.system(size: 12))
+                Text(String(patient.name.prefix(1)).uppercased())
+                    .font(.system(size: 17, weight: .black, design: .rounded))
+                    .foregroundColor(.white)
+            }
+            
+            VStack(alignment: .leading, spacing: 3) {
+                Text(patient.name.capitalized)
+                    .font(.system(size: 16, weight: .bold, design: .rounded))
+                    .foregroundColor(Color(hex: "0F172A"))
+                
+                Text("ID: #\(patient.patient_id.suffix(4))")
+                    .font(.system(size: 12, weight: .semibold, design: .monospaced))
                     .foregroundColor(Color(hex: "64748B"))
             }
             
             Spacer()
             
-            if let age = patient.age {
-                Text("\(age)y")
-                    .font(.system(size: 12, weight: .bold))
-                    .foregroundColor(Color(hex: "3B82F6"))
-                    .padding(.horizontal, 8)
-                    .padding(.vertical, 4)
-                    .background(Color(hex: "3B82F6").opacity(0.1))
-                    .cornerRadius(6)
+            HStack(spacing: 8) {
+                if let age = patient.age {
+                    Text("\(age) YRS")
+                        .font(.system(size: 11, weight: .black, design: .rounded))
+                        .foregroundColor(Color(hex: "2563EB"))
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 5)
+                        .background(Color(hex: "DBEAFE"))
+                        .cornerRadius(12)
+                }
+                
+                let pendingCount = (patient.pending_reviews ?? 0) > 0 ? (patient.pending_reviews ?? 0) : ((patient.has_advice ?? 0) == 0 ? 1 : 0)
+                if pendingCount > 0 {
+                    Text("\(pendingCount) PENDING")
+                        .font(.system(size: 11, weight: .black, design: .rounded))
+                        .foregroundColor(Color(hex: "D97706"))
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 5)
+                        .background(Color(hex: "FEF3C7"))
+                        .cornerRadius(12)
+                }
             }
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 14)
         .background(Color.white)
-        .cornerRadius(16)
-        .shadow(color: Color.black.opacity(0.04), radius: 10, x: 0, y: 4)
+        .cornerRadius(18)
+        .shadow(color: Color.black.opacity(0.04), radius: 8, x: 0, y: 4)
     }
 }
 
@@ -575,7 +617,7 @@ struct DoctorAdviceSection: View {
                     ForEach(adviceViewModel.adviceList) { advice in
                         VStack(alignment: .leading, spacing: 14) {
                             Text(advice.advice_text)
-                                .font(.system(size: 15, weight: .black, design: .rounded)) // Sharp text
+                                .font(.system(size: 15, weight: .black, design: .rounded))
                                 .foregroundColor(Color(hex: "1E293B"))
                                 .lineSpacing(4)
                             
@@ -695,7 +737,7 @@ struct AssessmentDetailView: View {
                                         VStack(spacing: 16) {
                                             HStack(alignment: .top) {
                                                 Text(l(resp.symptom_display_name ?? resp.symptom_name))
-                                                    .font(.system(size: 15, weight: .bold)) // Clean readable weight
+                                                    .font(.system(size: 15, weight: .bold))
                                                     .foregroundColor(Color(hex: "334155"))
                                                     .multilineTextAlignment(.leading)
                                                 Spacer()
@@ -819,50 +861,113 @@ struct AssessmentDetailView: View {
     private func generatePDF() -> URL? {
         guard let details = details else { return nil }
         let htmlContent = """
+        <!DOCTYPE html>
         <html>
         <head>
             <meta charset="utf-8">
             <style>
-                body {
-                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-                    color: #111;
-                    line-height: 1.5;
-                    padding: 40px;
+                * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; box-sizing: border-box; }
+                html, body {
+                    background-color: #0F172A !important;
+                    color: #F8FAFC !important;
+                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+                    margin: 0;
+                    padding: 20px;
+                }
+                .card {
+                    background-color: #1E293B !important;
+                    border: 1px solid #334155 !important;
+                    border-radius: 16px;
+                    padding: 24px;
+                    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+                }
+                .header {
+                    border-bottom: 1px solid #334155;
+                    padding-bottom: 16px;
+                    margin-bottom: 20px;
+                }
+                .logo {
+                    color: #06B6D4 !important;
+                    font-size: 24px;
+                    font-weight: 900;
+                    letter-spacing: -0.5px;
+                }
+                .sub {
+                    color: #94A3B8 !important;
+                    font-size: 13px;
+                    margin-top: 4px;
+                }
+                .section-title {
+                    font-size: 13px;
+                    font-weight: 800;
+                    text-transform: uppercase;
+                    color: #06B6D4 !important;
+                    letter-spacing: 1px;
+                    margin: 20px 0 10px 0;
+                }
+                .info-box {
+                    background-color: #0F172A !important;
+                    border: 1px solid #334155 !important;
+                    border-radius: 12px;
+                    padding: 16px;
+                    margin-bottom: 20px;
+                }
+                .info-line {
+                    margin-bottom: 8px;
                     font-size: 14px;
                 }
-                .highlight {
+                .info-label { color: #94A3B8 !important; }
+                .info-val { color: #F8FAFC !important; font-weight: 700; }
+                .badge {
+                    display: inline-block;
+                    padding: 4px 12px;
+                    border-radius: 20px;
+                    font-size: 12px;
                     font-weight: 800;
-                    margin-top: 16px;
-                    margin-bottom: 4px;
+                    background-color: rgba(6,182,212,0.25) !important;
+                    color: #06B6D4 !important;
+                    border: 1px solid rgba(6,182,212,0.5);
                 }
-                .text-block {
-                    margin-bottom: 16px;
-                }
-                .item {
-                    margin-bottom: 4px;
-                }
+                table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 13px; }
+                th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #334155 !important; }
+                th { color: #94A3B8 !important; font-size: 11px; text-transform: uppercase; }
+                td { color: #F8FAFC !important; }
+                .tag-yes { color: #10B981 !important; font-weight: 800; }
+                .tag-no { color: #F43F5E !important; font-weight: 800; }
+                .footer { margin-top: 24px; font-size: 11px; color: #64748B; text-align: center; border-top: 1px solid #334155; padding-top: 12px; }
             </style>
         </head>
-        <body>
-            <div class="highlight" style="margin-top: 0;">CLINICAL ASSESSMENT REPORT</div>
-            <div>--------------------------</div>
-            <div>Patient ID: \(patientID)</div>
-            \(patientName != nil ? "<div>Patient Name: \(patientName!)</div>" : "")
-            <div>Assessment Date: \(details.created_at)</div>
-            
-            <div class="highlight">SUMMARY:</div>
-            <div class="text-block">\(details.result_message)</div>
-            
-            <div class="highlight">SYMPTOM MARKERS:</div>
-            <div class="text-block">
-            \(details.responses.map { resp in
-                let label = resp.symptom_display_name ?? resp.symptom_name
-                return "<div class='item'>- \(label): \(resp.response.uppercased())</div>"
-            }.joined())
+        <body style="background-color: #0F172A; color: #F8FAFC;">
+            <div class="card" style="background-color: #1E293B;">
+                <div class="header">
+                    <div class="logo">AUTISCREEN</div>
+                    <div class="sub">Official Clinical Autism Evaluation Report</div>
+                </div>
+
+                <div class="info-box" style="background-color: #0F172A;">
+                    <div class="info-line"><span class="info-label">Patient ID:</span> <span class="info-val">#\(patientID)</span></div>
+                    \(patientName != nil ? "<div class='info-line'><span class='info-label'>Patient Name:</span> <span class='info-val'>\(patientName!)</span></div>" : "")
+                    <div class="info-line"><span class="info-label">Date Evaluated:</span> <span class="info-val">\(details.created_at)</span></div>
+                    <div class="info-line" style="margin-top: 10px;"><span class="info-label">Result:</span> <span class="badge">\(details.result_message)</span></div>
+                </div>
+
+                <div class="section-title">Symptom Assessment Responses</div>
+                <table>
+                    <thead>
+                        <tr><th>Symptom Indicator</th><th>Response</th></tr>
+                    </thead>
+                    <tbody>
+                    \(details.responses.map { resp in
+                        let label = resp.symptom_display_name ?? resp.symptom_name
+                        let isYes = resp.response.lowercased() == "yes"
+                        let tagClass = isYes ? "tag-yes" : "tag-no"
+                        return "<tr><td>\(label)</td><td><span class='\(tagClass)'>\(resp.response.uppercased())</span></td></tr>"
+                    }.joined())
+                    </tbody>
+                </table>
+
+                <div class="footer">Generated via Saveetha Autism Care Network</div>
             </div>
-            
-            <div>--------------------------</div>
-            <div>Generated via Saveetha Autism Care Network</div>
         </body>
         </html>
         """
@@ -880,6 +985,13 @@ struct AssessmentDetailView: View {
         UIGraphicsBeginPDFContextToData(pdfData, page, nil)
         for i in 0..<render.numberOfPages {
             UIGraphicsBeginPDFPage()
+            
+            // Fill background with dark navy color (#0F172A) so PDF page is never white
+            if let ctx = UIGraphicsGetCurrentContext() {
+                ctx.setFillColor(CGColor(red: 15/255.0, green: 23/255.0, blue: 42/255.0, alpha: 1.0))
+                ctx.fill(page)
+            }
+            
             render.drawPage(at: i, in: UIGraphicsGetPDFContextBounds())
         }
         UIGraphicsEndPDFContext()
@@ -913,8 +1025,9 @@ struct CustomDoctorTabBar: View {
     
     var body: some View {
         HStack(spacing: 0) {
-            tabButton(title: "Home", icon: "house.fill", index: 0)
-            tabButton(title: "Profile", icon: "person.fill", index: 1)
+            tabButton(title: "Patients", icon: "person.2.fill", index: 0)
+            tabButton(title: "Analytics", icon: "chart.bar.fill", index: 1)
+            tabButton(title: "Profile", icon: "person.circle.fill", index: 2)
         }
         .padding(4)
         .background(
@@ -926,7 +1039,7 @@ struct CustomDoctorTabBar: View {
                         .stroke(Color.white.opacity(0.5), lineWidth: 1)
                 )
         )
-        .padding(.horizontal, 100) // Widened for two icons
+        .padding(.horizontal, 40)
         .padding(.bottom, 10)
     }
     

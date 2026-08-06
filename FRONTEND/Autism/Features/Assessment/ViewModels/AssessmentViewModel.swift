@@ -22,6 +22,14 @@ class AssessmentViewModel: ObservableObject {
         return Double(currentSymptomIndex) / Double(symptoms.count)
     }
     
+    var yesCount: Int {
+        responses.filter { $0.response.lowercased() == "yes" }.count
+    }
+    
+    var totalCount: Int {
+        symptoms.count
+    }
+    
     func fetchSymptoms(ageGroup: String) {
         isLoading = true
         errorMessage = nil

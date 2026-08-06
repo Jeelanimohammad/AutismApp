@@ -37,6 +37,9 @@ if (strpos($dob, '/') !== false) {
     }
 }
 
+$image_action = 'keep'; // 'keep' | 'update' | 'remove'
+$full_url = null;
+
 if ($profile_image && strpos($profile_image, 'data:image') !== false) {
     // Handle base64 image upload
     $parts = explode(',', $profile_image);
@@ -48,26 +51,25 @@ if ($profile_image && strpos($profile_image, 'data:image') !== false) {
         mkdir('uploads', 0777, true);
     }
     
-    $saved_image_path = "";
     if (file_put_contents($path, $image_data)) {
-        $saved_image_path = $path; // Save relative path
-        
-        $sql = "UPDATE patients SET name=?, age=?, dob=?, sex=?, phone=?, email=?, profile_image=? WHERE patient_id=?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sissssss", $name, $age, $dob, $sex, $phone, $email, $saved_image_path, $patient_id);
-    } else {
-        // Fallback if upload fails
-        $sql = "UPDATE patients SET name=?, age=?, dob=?, sex=?, phone=?, email=? WHERE patient_id=?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sisssss", $name, $age, $dob, $sex, $phone, $email, $patient_id);
+        // Build full URL
+        $server_host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+        $full_url = "http://" . $server_host . "/autism/" . $path;
+        $image_action = 'update';
     }
-} else if ($profile_image === "") {
-    // Explicitly remove the profile image
+} elseif (empty($profile_image)) {
+    $image_action = 'remove';
+}
+
+if ($image_action === 'update') {
+    $sql = "UPDATE patients SET name=?, age=?, dob=?, sex=?, phone=?, email=?, profile_image=? WHERE patient_id=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sissssss", $name, $age, $dob, $sex, $phone, $email, $full_url, $patient_id);
+} elseif ($image_action === 'remove') {
     $sql = "UPDATE patients SET name=?, age=?, dob=?, sex=?, phone=?, email=?, profile_image=NULL WHERE patient_id=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("sisssss", $name, $age, $dob, $sex, $phone, $email, $patient_id);
 } else {
-    // Keep existing image if profile_image is not provided or is just a URL string we already have
     $sql = "UPDATE patients SET name=?, age=?, dob=?, sex=?, phone=?, email=? WHERE patient_id=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("sisssss", $name, $age, $dob, $sex, $phone, $email, $patient_id);

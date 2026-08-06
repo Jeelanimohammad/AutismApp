@@ -72,14 +72,6 @@ struct PatientLoginView: View {
                                 text: $viewModel.password,
                                 icon: "lock.shield.fill"
                             )
-                            
-                            if !viewModel.password.isEmpty && !viewModel.passwordValidation.isEmpty {
-                                Text(viewModel.passwordValidation.joined(separator: ", "))
-                                    .font(.system(size: 11, weight: .medium, design: .rounded))
-                                    .foregroundColor(.red)
-                                    .padding(.leading, 4)
-                                    .transition(.opacity)
-                            }
                         }
 
                         // Forgot Password

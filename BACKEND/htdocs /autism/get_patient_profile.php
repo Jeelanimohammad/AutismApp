@@ -16,10 +16,6 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($row = $result->fetch_assoc()) {
-    // Cast numeric fields to integers for reliable JSON decoding in Swift
-    $row['id'] = (int)$row['id'];
-    $row['age'] = (int)$row['age'];
-    
     echo json_encode([
         "success" => true,
         "data" => $row

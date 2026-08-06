@@ -17,8 +17,7 @@ struct ChangePasswordView: View {
     }
     
     func isValidPassword(_ password: String) -> Bool {
-        let regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8,}$"
-        return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: password)
+        return password.count >= 4
     }
     
     var body: some View {
@@ -103,9 +102,7 @@ struct ChangePasswordView: View {
                         
                         // Validation Checklist
                         VStack(alignment: .leading, spacing: 10) {
-                            validationRow("At least 8 characters", newPassword.count >= 8)
-                            validationRow("One uppercase letter", newPassword.range(of: "[A-Z]", options: .regularExpression) != nil)
-                            validationRow("One number", newPassword.range(of: "[0-9]", options: .regularExpression) != nil)
+                            validationRow("At least 4 characters", newPassword.count >= 4)
                             
                             if !confirmPassword.isEmpty {
                                 HStack {

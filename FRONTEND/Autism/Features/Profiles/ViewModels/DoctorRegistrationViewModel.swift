@@ -21,17 +21,9 @@ class DoctorRegistrationViewModel: ObservableObject {
         return components.year ?? 0
     }
     
-    var passwordValidation: [String] {
-        var messages: [String] = []
-        if password.count < 8 { messages.append("• Minimum 8 characters") }
-        if password.range(of: "[A-Z]", options: .regularExpression) == nil { messages.append("• At least 1 uppercase letter") }
-        if password.range(of: "[a-z]", options: .regularExpression) == nil { messages.append("• At least 1 lowercase letter") }
-        if password.range(of: "[0-9]", options: .regularExpression) == nil { messages.append("• At least 1 number") }
-        if password.range(of: "[^A-Za-z0-9]", options: .regularExpression) == nil { messages.append("• At least 1 special character") }
-        return messages
-    }
-    
-    var isPasswordValid: Bool { passwordValidation.isEmpty }
+    // Password must be at least 4 characters (matches web app, patient VM, and backend)
+    var isPasswordValid: Bool { password.count >= 4 }
+
     
     var canRegister: Bool {
         return !isLoading && !email.isEmpty && !name.isEmpty && !doctorID.isEmpty && !phoneNumber.isEmpty && !password.isEmpty
@@ -67,7 +59,7 @@ class DoctorRegistrationViewModel: ObservableObject {
         // 4. Password Validation (At least 4 chars for simplicity or keep strict?)
         // The user previously asked for 'letters, numbers and special characters' for name, 
         // but then 'only letters' later. For password, let's just check length.
-        if password.count < 4 {
+        if !isPasswordValid {
             self.errorMessage = "Password must be at least 4 characters."
             self.showError = true
             return

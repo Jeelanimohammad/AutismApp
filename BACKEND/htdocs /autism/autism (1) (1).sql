@@ -211,7 +211,7 @@ INSERT INTO `symptoms` (`id`, `symptom_name`, `explanation`, `image_url`, `age_g
 (8, 'sym01', 'Child Prefers to be Alone', 'http://172.25.59.31/autism/uploads/image_01.png\n', '>3'),
 (9, 'sym02', 'Sometimes it feels like child can\'t hear well', 'http://172.25.59.31/autism/uploads/image_02.png\r\n', '>3'),
 (10, 'sym03', 'Child grabs elders hands to his/her point of interest', 'http://172.25.59.31/autism/uploads/image_03.png\r\n', '>3'),
-(11, 'sym04', 'Child is very attached to toys and other things', 'http://172.25.59.31/autism/uploads/image_04.png\r\n', '>3'),
+(11, 'sym04', 'Child does not involve in imaginative play', 'http://172.25.59.31/autism/uploads/image_04.png\r\n', '>3'),
 (12, 'sym05', 'Child has poor eye contact', 'http://172.25.59.31/autism/uploads/image_05.png\r\n', '>3'),
 (13, 'sym06', 'Child has abnormal gestures and behviours', 'http://172.25.59.31/autism/uploads/image_06.png\r\n', '>3'),
 (14, 'sym07', 'Child does not like to be hugged or touched', 'http://172.25.59.31/autism/uploads/image_07.png\r\n', '>3'),
